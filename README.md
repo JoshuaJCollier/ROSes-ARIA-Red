@@ -3,7 +3,7 @@ Github repo for code compilation to operate Pioneer Robot.
 
 To connect to bot:
 Join Wi-Fi
-- name: Stealth
+- name: Stealth-2g
 - pass: Magic2010
 
 SSH into robot
