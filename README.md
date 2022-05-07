@@ -87,3 +87,5 @@ rosrun rosaria_client interface (press 4 for teleop)
 
 Things to look at
 - http://wiki.ros.org/Robots/AMR_Pioneer_Compatible possible embedded connection between GPS and ARIA
+- https://answers.ros.org/question/266857/using-roslaunch-to-launch-ros-nodes/ launch file written in python
+- https://automaticaddison.com/how-to-create-and-execute-ros-launch-files/ create launch file
