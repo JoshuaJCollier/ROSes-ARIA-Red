@@ -11,20 +11,26 @@ SSH into robot
 - use password netipc
 
 Set up catkin in folder you are working in
+Follow steps on this http://old.roblab.org/courses/mobrob/project/general/Pioneer-Project-Powerpoint.pdf
 
-For ROSDepthAI
-- follow guides online
+For Camera: ROSDepthAI
+- https://github.com/luxonis/depthai-ros follow guides online
 - pip uninstall PyQt5
 - if pip uninstall doesnt work, pip install PyQt5 and then uninstall (it tells you how to do it somewhere)
 
-For ROSAria
+For Motors & Battery: ROSAria
+- http://wiki.ros.org/ROSARIA/Tutorials/How%20to%20use%20ROSARIA
 - git clone https://github.com/reedhedges/AriaCoda
 - cd AriaCoda
 - make
 - follow guides online
 
-For ROS GPS
+For GPS: ROS GPS
 - sudo apt-get install ros-noetic-nmea-navsat-driver
+
+For Controller: ps3joy
+- http://wiki.ros.org/ps3joy
+- follow guide
 
 After installing nodes
 - catkin_make
