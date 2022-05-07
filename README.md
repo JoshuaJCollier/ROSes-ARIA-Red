@@ -7,7 +7,9 @@ Join Wi-Fi
 - pass: Magic2010
 
 SSH into robot
-- ssh netipc@192.168.2.**
+```
+ssh netipc@192.168.2.** (156 for R5 currently)
+```
 - use password netipc
 
 Set up catkin in folder you are working in
@@ -20,22 +22,28 @@ For Camera: ROSDepthAI
 
 For Motors & Battery: ROSAria
 - http://wiki.ros.org/ROSARIA/Tutorials/How%20to%20use%20ROSARIA
-- git clone https://github.com/reedhedges/AriaCoda
-- cd AriaCoda
-- make
+```
+git clone https://github.com/reedhedges/AriaCoda
+cd AriaCoda
+make
+```
 - follow guides online
 
 For GPS: ROS GPS
-- sudo apt-get install ros-noetic-nmea-navsat-driver
+```
+sudo apt-get install ros-noetic-nmea-navsat-driver
+```
 
 For Controller: ps3joy
 - http://wiki.ros.org/ps3joy
 - follow guide
 
 After installing nodes
-- catkin_make
+```
+catkin_make
+```
 
-Code bits
+Code bits (to run all the nodes from install, these will be combined in a launch file)
 ```
 rosrun rosaria RosAria _port:=/dev/ttyS1
 rosrun rosaria_client interface
