@@ -51,3 +51,9 @@ roslaunch depthai_examples stereo_node.launch
 rosrun nmea_navsat_driver nmea_serial_driver
 _port:=/dev/ttyACM0 _baud:=9600
 ```
+
+Working with ROS
+```
+rosnode list
+rostopic list
+```
