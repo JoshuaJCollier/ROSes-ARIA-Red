@@ -58,8 +58,16 @@ rostopic list
 ```
 
 ROSAria Working
+- You need 3 terminals, on each of them, run one of the following sets of code (in order)
 ```
 . devel/setup.bash
+roscore
+
+. devel/setup.bash
 export ROS_IP=192.168.2.156
-rosrun rosaria RosAria
+rosrun rosaria RosAria _port:=/dev/ttyS1
+
+. devel/setup.bash
+rosrun rosaria_client interface
 ```
+- These will give control over the teleop
