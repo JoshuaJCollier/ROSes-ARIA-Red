@@ -84,3 +84,6 @@ rosrun rosaria RosAria _port:=/dev/ttyS1
 rosrun rosaria_client interface (press 4 for teleop)
 ```
 - These will give control over the teleop
+
+Things to look at
+- http://wiki.ros.org/Robots/AMR_Pioneer_Compatible possible embedded connection between GPS and ARIA
