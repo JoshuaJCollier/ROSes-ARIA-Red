@@ -8,9 +8,9 @@ Join Wi-Fi
 
 SSH into robot
 ```
-ssh netipc@192.168.2.** (156 for R5 currently)
+ssh netipc@192.168.2.** (156 for R5 currently, pass: netipc)
+cd Desktop/Group4Proj/catkin
 ```
-- Pass: netipc
 
 # To install nodes
 Set up catkin in folder you are working in
@@ -18,7 +18,9 @@ Set up catkin in folder you are working in
 
 For Camera: ROSDepthAI
 - https://github.com/luxonis/depthai-ros follow guides online
-- pip uninstall PyQt5
+```
+pip uninstall PyQt5
+```
 - If pip uninstall doesnt work, pip install PyQt5 and then uninstall (it tells you how to do it somewhere)
 
 For Motors & Battery: ROSAria
@@ -37,7 +39,7 @@ sudo apt-get install ros-noetic-nmea-navsat-driver
 
 For Controller: ps3joy
 - http://wiki.ros.org/ps3joy
-- follow guide (have not tried yet)
+- Follow guide (have not tried yet)
 
 # 
 After installing new nodes
@@ -45,6 +47,7 @@ After installing new nodes
 catkin_make
 ```
 
+# To Program
 Code bits (to run all the nodes from install, these will be combined in a launch file)
 ```
 roslaunch depthai_examples stereo_node.launch (not working so far I think)
