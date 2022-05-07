@@ -34,3 +34,12 @@ For Controller: ps3joy
 
 After installing nodes
 - catkin_make
+
+Code bits
+'''
+rosrun rosaria RosAria _port:=/dev/ttyS1
+rosrun rosaria_client interface
+roslaunch depthai_examples stereo_node.launch
+rosrun nmea_navsat_driver nmea_serial_driver
+_port:=/dev/ttyACM0 _baud:=9600
+'''
