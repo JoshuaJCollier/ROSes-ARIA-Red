@@ -56,3 +56,10 @@ Working with ROS
 rosnode list
 rostopic list
 ```
+
+ROSAria Working
+```
+. devel/setup.bash
+export ROS_IP=192.168.2.156
+rosrun rosaria RosAria
+```
