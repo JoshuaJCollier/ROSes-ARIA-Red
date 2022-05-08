@@ -44,7 +44,6 @@ sudo apt-get install ros-noetic-nmea-navsat-driver
 
 For Controller: ps3joy
 - http://wiki.ros.org/ps3joy
-- https://wiki.nps.edu/display/RC/Pioneer+P3AT+Wireless+Joystick+Control
 - Follow guide (have not tried yet)
 #
 
