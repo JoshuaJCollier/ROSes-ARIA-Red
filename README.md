@@ -72,7 +72,7 @@ ROS GPS
 . devel/setup.bash
 roscore 
 
-.devel/setup.bash
+. devel/setup.bash
 rosrun nmea_navsat_driver nmea_serial_driver _port:=/dev/ttyACM0 _baud:=9600
 
 rostopic echo fix (for output)
