@@ -92,6 +92,11 @@ Things to look at
 - http://wiki.ros.org/Robots/AMR_Pioneer_Compatible possible embedded connection between GPS and ARIA
 - https://answers.ros.org/question/266857/using-roslaunch-to-launch-ros-nodes/ launch file written in python
 - https://automaticaddison.com/how-to-create-and-execute-ros-launch-files/ create launch file
+- https://github.com/rnitin/pioneer-ros/blob/master/p3dx-mobilesim/waypoint_pioneer.cpp this is the coolest
+- http://library.isr.ist.utl.pt/docs/roswiki/ROSARIA(2f)Tutorials(2f)How(20)to(20)use(20)ROSARIA.html this is cool
+- https://github.com/tdenewiler/node_example/blob/main/src/pytalker.py 
+- http://wiki.ros.org/ROSARIA useful
+- http://wiki.ros.org/ROSNodeTutorialPython
 
 Goals for 08/05/22
 - Create node to publish to 
