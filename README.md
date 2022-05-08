@@ -15,7 +15,7 @@ cd Desktop/Group4Proj/catkin
 # To install nodes
 Set up catkin in folder you are working in
 - Follow steps on this http://old.roblab.org/courses/mobrob/project/general/Pioneer-Project-Powerpoint.pdf
-
+&nbsp;
 
 For Camera: ROSDepthAI
 - https://github.com/luxonis/depthai-ros follow guides online
