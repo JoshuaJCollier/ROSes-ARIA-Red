@@ -109,4 +109,4 @@ Things to look at
 #
 
 Goals for 08/05/22
-- Create node to publish to /RosAria/cmd_vel topic with geometry_msgs/Twist msg
+- Create node to publish to /RosAria/cmd_vel topic with geometry_msgs/Twist msg -> something like this (rostopic pub -1 /RosAria/cmd_vel geometry_msgs/Twist '[0.1, 0.0, 0.0]' '[0.0, 0.0, 0.0]')
