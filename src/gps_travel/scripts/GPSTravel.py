@@ -1,12 +1,119 @@
 #!/usr/bin/env python
-
-# Import required Python code.
 import rospy
 import sys
 
-# Import custom message data and dynamic reconfigure variables.
+# Predefined message data
 from geometry_msgs.msg import Twist
+from sensor_msgs.msg import NavSatFix
 
+currentGPSPos = (0, 0)
+currentGoal = 0
+
+last_data = ""
+gpsStarted = False
+pub = rospy.Publisher("gpsTravel_cmd_vel", Twist, queue_size=10)
+
+def gpsPosCallback(data):
+    print("Received {}".format(data))
+    global gpsStarted, last_data
+    last_data = data
+    if (not gpsStarted):
+        gpsStarted = True
+
+def timer_callback(event):
+    global gpsStarted, pub, last_data, currentGPSPos
+    if (gpsStarted):
+        goals = [(0, 5), (1, 5), (1, 4)]
+        relativeGoals = []
+        for i in range(len(goals)):
+            # relative goals
+            relativeGoals.append((goals[i][0] - currentGPSPos[0], goals[i][1] - currentGPSPos[1]))
+        
+        goal = goals[currentGoal]
+        # write some code to get heading from current position to current goal
+        # and set the speeds accordingly, also pass them to a topic that isnt
+        # cmd_vel so that another node can do the final publishing to cmd_vel
+        
+        # if current heading - goal heading = 0 drive forward, otherwise turn towards it
+        msg = Twist()
+        msg.linear.x = goal[0]
+        msg.linear.y = goal[1]
+        msg.angular.z = 0
+        
+        pub.publish(msg)
+        print("Published {}".format(last_data))
+
+def listener():
+    rospy.init_node('GPSTravel', anonymous=True)
+    subTopic = rospy.get_param('~topic', 'fix')
+    sub = rospy.Subscriber(subTopic, NavSatFix, gpsPosCallback)
+    timer = rospy.Timer(rospy.Duration(0.2), timer_callback)
+
+    rospy.spin()    
+    timer.shutdown()
+
+if __name__ == '__main__':
+    print("Running")
+    listener()
+
+'''
+def navSat(data):
+    rospy.loginfo(rospy.get_caller_id() + "NavSatFix: %s", data.data)
+    currentGPSPos = (data.data.lattitude, data.data.longitude)
+
+def currGoal(data):
+    rospy.loginfo(rospy.get_caller_id() + "Current Goal: %s", data.data)
+    currentGoal = data.data
+
+def GPSTravel():
+    curentGPSPos = (0, 0)
+    currentGoal = 0
+    # pubTopic = rospy.get_param('~topic', 'RosAria/cmd_vel')
+    subTopic = rospy.get_param('~topic', 'fix')
+    sub2Topic = rospy.get_param('~topic', 'currentGoal')
+    rospy.loginfo('topic = %s', "gpsTravel_cmd_vel")
+
+    pub = rospy.Publisher("gpsTravel_cmd_vel", Twist, queue_size=10)
+    sub = rospy.Subscriber(subTopic, NavSatFix, navSat)
+    sub2 = rospy.Subscriber(sub2Topic, int, currGoal)
+    
+    rospy.init_node('GPSTravel', anonymous=True)
+    
+    msg = Twist()
+    rate = rospy.Rate(10) # 10hz
+    
+    # these are relative positions
+    goals = [(0, 5), (1, 5), (1, 4)]
+    
+    while not rospy.is_shutdown():
+        relativeGoals = []
+        for i in range(len(goals)):
+            # relative goals
+            relativeGoals.append((goals[i][0] - curentGPSPos[0], goals[i][1] - curentGPSPos[1]))
+        
+        goal = goals[currentGoal]
+        
+        # write some code to get heading from current position to current goal
+        # and set the speeds accordingly, also pass them to a topic that isnt
+        # cmd_vel so that another node can do the final publishing to cmd_vel
+        msg.linear.x = 0
+        msg.linear.y = 0
+        msg.linear.z = 0
+        msg.angular.x = 0
+        msg.angular.y = 0
+        msg.angular.z = 0
+        
+        pub.publish(msg)
+        rate.sleep()
+
+if __name__ == '__main__':
+    try:
+        GPSTravel()
+    except rospy.ROSInterruptException:
+        pass
+'''
+
+'''
 # Node example class.
 class GPSTravel():
     # Must have __init__(self) function for a class, similar to a C++ class constructor.
@@ -54,3 +161,4 @@ if __name__ == '__main__':
     try:
         ne = GPSTravel()
     except rospy.ROSInterruptException: pass
+'''
