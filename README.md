@@ -81,6 +81,7 @@ Things to look at
 - https://github.com/tdenewiler/node_example/blob/main/src/pytalker.py 
 - http://wiki.ros.org/ROSARIA useful
 - http://wiki.ros.org/ROSNodeTutorialPython
+- https://stackoverflow.com/questions/40508651/writing-a-ros-node-with-both-a-publisher-and-subscriber
 #
 
 Goals for 08/05/22
