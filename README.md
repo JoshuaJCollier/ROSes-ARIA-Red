@@ -1,7 +1,10 @@
 # AUTO4508-Project Group 4
 Github repo for code compilation to operate Pioneer Robot. Below are instructions for connecting to the bot and installing nodes, as well as compiling and running.
 
+For me to copy code from the bot to my computer, if you want to get a copy change the second directory to somewhere on your computer
+```
 scp -r * netipc@192.168.2.156:~/Desktop/Group4Proj "C:\Users\josh\OneDrive - The University of Western Australia\UWA\Postgrad\UWA Year 5 - Masters\Y5S1\AUTO4508 - Mobile Robots\CODE_ON_BOT\Group4Proj" 
+```
 
 # To connect to bot
 Join Wi-Fi
