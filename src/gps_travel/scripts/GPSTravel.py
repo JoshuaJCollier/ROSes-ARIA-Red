@@ -36,6 +36,7 @@ def timer_callback(event):
         
         # if current heading - goal heading = 0 drive forward, otherwise turn towards it
         msg = Twist()
+        
         msg.linear.x = goal[0]
         msg.linear.y = goal[1]
         msg.angular.z = 0
@@ -43,10 +44,10 @@ def timer_callback(event):
         pub.publish(msg)
         print("Published {}".format(last_data))
 
-def listener():
+def main():
     rospy.init_node('GPSTravel', anonymous=True)
     subTopic = rospy.get_param('~topic', 'fix')
-    sub = rospy.Subscriber(subTopic, NavSatFix, gpsPosCallback)
+    rospy.Subscriber(subTopic, NavSatFix, gpsPosCallback)
     timer = rospy.Timer(rospy.Duration(0.2), timer_callback)
 
     rospy.spin()    
@@ -54,7 +55,7 @@ def listener():
 
 if __name__ == '__main__':
     print("Running")
-    listener()
+    main()
 
 '''
 def navSat(data):
