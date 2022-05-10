@@ -1,0 +1,8 @@
+prefix=/home/netipc/Desktop/Group4Proj/catkin_ws/install
+
+Name: gps_travel
+Description: Description of gps_travel
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
