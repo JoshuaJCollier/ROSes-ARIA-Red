@@ -1,2 +1,2 @@
-gps_travel:luxonis/depthai-ros-examples/depthai_examples:luxonis/depthai-ros/depthai_bridge:luxonis/depthai-ros/depthai_ros_msgs:rosaria
+gps_travel:luxonis/depthai-ros-examples/depthai_examples:luxonis/depthai-ros/depthai_bridge:luxonis/depthai-ros/depthai_ros_msgs:megamind:rosaria
 -DCATKIN_DEVEL_PREFIX=/home/netipc/Desktop/Group4Proj/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/netipc/Desktop/Group4Proj/catkin_ws/install -G Unix Makefiles

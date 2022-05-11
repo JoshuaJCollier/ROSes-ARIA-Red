@@ -6,6 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("gps_travel")
+subdirs("megamind")
 subdirs("rosaria")
 subdirs("luxonis/depthai-ros/depthai_ros_msgs")
 subdirs("luxonis/depthai-ros/depthai_bridge")

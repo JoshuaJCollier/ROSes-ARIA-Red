@@ -11,5 +11,8 @@
 
   <node name="GPSTalker" pkg="gps_travel" type="GPSTravel.py">
   </node>
+  
+  <node name="MegaMind" pkg="megamind" type="MegaMind.py">
+  </node>
 
 </launch>

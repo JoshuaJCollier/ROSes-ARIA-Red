@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/gtest/cmake_install.cmake")
   include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/gps_travel/cmake_install.cmake")
+  include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind/cmake_install.cmake")
   include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/rosaria/cmake_install.cmake")
   include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/luxonis/depthai-ros/depthai_ros_msgs/cmake_install.cmake")
   include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/luxonis/depthai-ros/depthai_bridge/cmake_install.cmake")
