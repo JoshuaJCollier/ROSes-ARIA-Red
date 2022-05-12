@@ -4,3 +4,9 @@
 [submodule "Group4Proj\\catkin_ws\\src\\luxonis\\depthai-ros\\"]
 	path = Group4Proj\\catkin_ws\\src\\luxonis\\depthai-ros\\
 	url = https://github.com/luxonis/depthai-ros
+[submodule "Group4Proj\\catkin_ws\\src\\luxonis\\depthai-ros-examples\\"]
+	path = Group4Proj\\catkin_ws\\src\\luxonis\\depthai-ros-examples\\
+	url = https://github.com/luxonis/depthai-ros-examples
+[submodule "Group4Proj\\catkin_ws\\AriaCoda\\"]
+	path = Group4Proj\\catkin_ws\\AriaCoda\\
+	url = https://github.com/reedhedges/AriaCoda
