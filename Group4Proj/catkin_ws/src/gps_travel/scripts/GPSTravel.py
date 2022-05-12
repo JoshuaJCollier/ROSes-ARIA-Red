@@ -52,18 +52,22 @@ def publisherCallback(event):
         # calculate heading and distance
         alpha = startHeading - math.atan2(goal[1],goal[0])
         dist = math.sqrt(math.pow(goal[1], 2) + math.pow(goal[0],2))
-        
+        if alpha > math.pi:
+            alpha -= 2*math.py
+        elif alpha < -math.py:
+            alpha += 2*math.py
+
         # make this based on the heading thing instead, and then the other is an elif
         if (time.perf_counter() < (startTime+alpha*2)):
-            if alpha > 180:
-                msg.angular.z = -0.5
-            else:
+            if alpha > 0:
                 msg.angular.z = 0.5
+            else:
+                msg.angular.z = -0.5
         # time.perf_counter() < (start+dist*2+alpha*2)) and (time.perf_counter() > (start+alpha*2) 
-        if (dist > 2):
+        elif (dist > 0.0001):
             msg.linear.x = 0.5
         # Make this the else
-        elif (dist < 2):
+        else:
             msg.linear.x = 0
                 
         pub.publish(msg)
@@ -72,7 +76,7 @@ def main():
     global start
     rospy.init_node('GPSTravel', anonymous=True)
     gpsTopic = rospy.get_param('~topic', 'fix')
-    megaTopic = rospy.get_param('~topic', 'currentGoal')
+    megaTopic = rospy.get_param('~topic', 'decision')
     rospy.Subscriber(gpsTopic, NavSatFix, gpsPosCallback)
     rospy.Subscriber(megaTopic, Decision, decisionCallback)
     timer = rospy.Timer(rospy.Duration(0.2), publisherCallback)

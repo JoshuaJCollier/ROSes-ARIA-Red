@@ -53,16 +53,16 @@ CMAKE_BINARY_DIR = /home/netipc/Desktop/Group4Proj/catkin_ws/build
 # Include the progress variables for this target.
 include megamind/CMakeFiles/megamind_generate_messages_lisp.dir/progress.make
 
-megamind/CMakeFiles/megamind_generate_messages_lisp: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/CurrentGoal.lisp
+megamind/CMakeFiles/megamind_generate_messages_lisp: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/Decision.lisp
 
 
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/CurrentGoal.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/CurrentGoal.lisp: /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from megamind/CurrentGoal.msg"
-	cd /home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg -Imegamind:/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p megamind -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/Decision.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/Decision.lisp: /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from megamind/Decision.msg"
+	cd /home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg -Imegamind:/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p megamind -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg
 
 megamind_generate_messages_lisp: megamind/CMakeFiles/megamind_generate_messages_lisp
-megamind_generate_messages_lisp: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/CurrentGoal.lisp
+megamind_generate_messages_lisp: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/Decision.lisp
 megamind_generate_messages_lisp: megamind/CMakeFiles/megamind_generate_messages_lisp.dir/build.make
 
 .PHONY : megamind_generate_messages_lisp
