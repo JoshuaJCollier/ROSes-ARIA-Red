@@ -53,47 +53,47 @@ def publisherCallback(event):
     msg = Twist()
     if (megaMindStarted):
         # 0 -> Goal Seeking
-        if (controller_joy_in.buttons[0] == 1):
-            if (mindState == 0):
-                if (len(firstPos) < 10):
-                    decision.gps_travel_on = 0
-                    firstPos.append(currentGPSPos)
-                    startHeadingTime = time.perf_counter()
-                elif (len(firstPos) == 10) and (time.perf_counter() < (startHeadingTime+2)) and (not foundHeading):
-                    msg.linear.x = 1
-                elif (time.perf_counter() > (startHeadingTime+2)) and (not foundHeading):
-                    if (len(secondPos) < 10):
-                        secondPos.append(currentGPSPos)
-                    else:
-                        # NOW YOU CAN CALCULATE HEADING
-                        lat1, lon1 = medianFilter(firstPos)
-                        lat2, lon2 = medianFilter(secondPos)
-                        decision.startHeading = math.atan2(lat2-lat1,lon2-lon1)
-                        foundHeading = True
-                        decision.gps_travel_on = 1
-                # do the find heading thing here, then set gps_travel to 1
-                
-                
-                if decision.gps_travel_on == 1:
-                    msg = gps_travel_cmd_vel_msg
-                
-                # if distance to goal is small or we see the cone clearly or there is an obstacle, then 
-                # decision.currentGoal = 1 or 2
+        #if (controller_joy_in.buttons[0] == 1):
+        if (mindState == 0):
+            if (len(firstPos) < 10):
+                decision.gps_travel_on = 0
+                firstPos.append(currentGPSPos)
+                startHeadingTime = time.perf_counter()
+            elif (len(firstPos) == 10) and (time.perf_counter() < (startHeadingTime+2)) and (not foundHeading):
+                msg.linear.x = 1
+            elif (time.perf_counter() > (startHeadingTime+2)) and (not foundHeading):
+                if (len(secondPos) < 10):
+                    secondPos.append(currentGPSPos)
+                else:
+                    # NOW YOU CAN CALCULATE HEADING
+                    lat1, lon1 = medianFilter(firstPos)
+                    lat2, lon2 = medianFilter(secondPos)
+                    decision.startHeading = math.atan2(lat2-lat1,lon2-lon1)
+                    foundHeading = True
+                    decision.gps_travel_on = 1
+            # do the find heading thing here, then set gps_travel to 1
 
-            elif (mindState == 1):
-                msg = object_avoid_cmd_vel_msg
-            
-            # if (goal has been reached):
-            #     goal.currentGoal += 1
-            
-            cmdVelPub.publish(msg)
-            decision.startTime = time.perf_counter()
-            decisionPub.publish(decision)
-        else:
-            print("Manual")
-            # remap controller to direct cmd_vel controls
-            msg.linear.x = controller_joy_in.axes[1]/2 # Up/Down of Left Stick
-            msg.angular.z = controller_joy_in.axes[2] # Left/Right of Right Stick
+            # if we see something 
+            if decision.gps_travel_on == 1:
+                msg = gps_travel_cmd_vel_msg
+
+            # if distance to goal is small or we see the cone clearly or there is an obstacle, then 
+            # decision.currentGoal = 1 or 2
+
+        elif (mindState == 1):
+            msg = object_avoid_cmd_vel_msg
+
+        # if (goal has been reached):
+        #     goal.currentGoal += 1
+
+        cmdVelPub.publish(msg)
+        decision.startTime = time.perf_counter()
+        decisionPub.publish(decision)
+        #else:
+        #    print("Manual")
+        #    # remap controller to direct cmd_vel controls
+        #    msg.linear.x = controller_joy_in.axes[1]/2 # Up/Down of Left Stick
+        #    msg.angular.z = controller_joy_in.axes[2] # Left/Right of Right Stick
 
 def main():
     global start, mindState, goal
