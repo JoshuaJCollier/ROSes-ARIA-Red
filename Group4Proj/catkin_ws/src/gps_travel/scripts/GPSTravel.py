@@ -40,7 +40,7 @@ def publisherCallback(event):
     if (not gpsStarted):
         start = time.perf_counter()
     if (gpsStarted and gps_travel_on):
-        goals = [(2, 2), (1, 5), (1, 4)]
+        goals = [(-31.980868452462268, 115.81715590281765), (-31.98075832251854, 115.81715710980328), (-31.980743349384806, 115.81712532559989)]
         relativeGoals = []
         for i in range(len(goals)):
             # relative goals
