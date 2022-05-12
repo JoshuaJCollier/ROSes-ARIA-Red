@@ -6,22 +6,26 @@ import math
 
 # Predefined message data
 from geometry_msgs.msg import Twist
-from megamind.msg import CurrentGoal
+from megamind.msg import Decision
 from sensor_msgs.msg import NavSatFix, Joy
 
 currentGPSPos = (0, 0)
-currentGoal = 0
 start = 0
 gps_travel_cmd_vel_msg = Twist()
 object_avoid_cmd_vel_msg = Twist()
 controller_joy_in = Joy()
 mindState = 0
-goal = CurrentGoal()
+decision = Decision()
+
+firstPos = []
+secondPos = []
+startHeadingTime = 0
+foundHeading = False
 
 megaMindStarted = False
 
 cmdVelPub = rospy.Publisher("RosAria/cmd_vel", Twist, queue_size=10)
-currentGoalPub = rospy.Publisher("currentGoal", CurrentGoal, queue_size=10)
+megaPub = rospy.Publisher("decision", Decision, queue_size=10)
 
 def gpsPosCallback(data):
     global currentGPSPos
@@ -43,7 +47,7 @@ def gpsTravelSubCallback(data):
         megaMindStarted = True
 
 def publisherCallback(event):
-    global megaMindStarted, cmdVelPub, currentGPSPos, gps_travel_cmd_vel_msg, object_avoid_cmd_vel_msg, controller_joy_in, mindState, goal
+    global megaMindStarted, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_avoid_cmd_vel_msg, controller_joy_in, mindState, decision, startHeadingTime, foundHeading
     # Mind State Definitions: 0 -> Goal Seeking, 1 -> Object Avoidance, 2 -> Cone Finding, 3 -> Cone Picture, 4 -> Bucket Picture
     
     msg = Twist()
@@ -51,7 +55,31 @@ def publisherCallback(event):
         # 0 -> Goal Seeking
         if (controller_joy_in.buttons[0] == 1):
             if (mindState == 0):
-                msg = gps_travel_cmd_vel_msg
+                if (len(firstPos) < 10):
+                    decision.gps_travel_on = 0
+                    firstPos.append(currentGPSPos)
+                    startHeadingTime = time.perf_counter()
+                elif (len(firstPos) == 10) and (time.perf_counter() < (startHeadingTime+2)) and (not foundHeading):
+                    msg.linear.x = 1
+                elif (time.perf_counter() > (startHeadingTime+2)) and (not foundHeading):
+                    if (len(secondPos) < 10):
+                        secondPos.append(currentGPSPos)
+                    else:
+                        # NOW YOU CAN CALCULATE HEADING
+                        lat1, lon1 = medianFilter(firstPos)
+                        lat2, lon2 = medianFilter(secondPos)
+                        decision.startHeading = math.atan2(lat2-lat1,lon2-lon1)
+                        foundHeading = True
+                        decision.gps_travel_on = 1
+                # do the find heading thing here, then set gps_travel to 1
+                
+                
+                if decision.gps_travel_on == 1:
+                    msg = gps_travel_cmd_vel_msg
+                
+                # if distance to goal is small or we see the cone clearly or there is an obstacle, then 
+                # decision.currentGoal = 1 or 2
+
             elif (mindState == 1):
                 msg = object_avoid_cmd_vel_msg
             
@@ -59,7 +87,8 @@ def publisherCallback(event):
             #     goal.currentGoal += 1
             
             cmdVelPub.publish(msg)
-            currentGoalPub.publish(goal)
+            decision.startTime = time.perf_counter()
+            decisionPub.publish(decision)
         else:
             print("Manual")
             # remap controller to direct cmd_vel controls
@@ -79,7 +108,8 @@ def main():
     rospy.Subscriber(controllerSub, Joy, controllerSubCallback)
     timer = rospy.Timer(rospy.Duration(0.2), publisherCallback)
     start = time.perf_counter()
-    goal.currentGoal = 0
+    decision.currentGoal = 0
+    mindState = 0
     
     rospy.spin()
     timer.shutdown()
