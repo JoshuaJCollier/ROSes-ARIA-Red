@@ -6,11 +6,12 @@ import math
 
 # Predefined message data
 from geometry_msgs.msg import Twist
-from megamind.msg import CurrentGoal
+from megamind.msg import Decision
 from sensor_msgs.msg import NavSatFix
 
 currentGPSPos = (0, 0)
 currentGoal = 0
+startHeading = 0
 facing = False
 start = 0
 
@@ -18,9 +19,10 @@ gpsStarted = False
 # "gpstravel_cmd_vel"
 pub = rospy.Publisher("gps_travel_cmd_vel", Twist, queue_size=10)
 
-def currentGoalCallback(data):
-    global gpsStarted, currentGoal
+def decisionCallback(data):
+    global gpsStarted, currentGoal, startHeading
     currentGoal = data.currentGoal
+    startHeading = data.startHeading
 
 def gpsPosCallback(data):
     global gpsStarted, currentGPSPos
@@ -29,7 +31,7 @@ def gpsPosCallback(data):
         gpsStarted = True
     
 def publisherCallback(event):
-    global gpsStarted, pub, currentGPSPos, facing, start
+    global gpsStarted, pub, currentGPSPos, facing, start, startHeading
     if (not gpsStarted):
         start = time.perf_counter()
     if (gpsStarted):
@@ -39,11 +41,11 @@ def publisherCallback(event):
             # relative goals
             relativeGoals.append((goals[i][0] - currentGPSPos[0], goals[i][1] - currentGPSPos[1]))
         
-        goal = goals[currentGoal]
+        goal = relativeGoals[currentGoal]
         msg = Twist()
         
         # calculate heading and distance
-        alpha = math.atan2(goal[1],goal[0])
+        alpha = startHeading - math.atan2(goal[1],goal[0])
         dist = math.sqrt(math.pow(goal[1], 2) + math.pow(goal[0],2))
         
         # make this based on the heading thing instead, and then the other is an elif
@@ -61,10 +63,10 @@ def publisherCallback(event):
 def main():
     global start
     rospy.init_node('GPSTravel', anonymous=True)
-    subTopic = rospy.get_param('~topic', 'fix')
-    goalTopic = rospy.get_param('~topic', 'currentGoal')
-    rospy.Subscriber(subTopic, NavSatFix, gpsPosCallback)
-    rospy.Subscriber(goalTopic, CurrentGoal, currentGoalCallback)
+    gpsTopic = rospy.get_param('~topic', 'fix')
+    megaTopic = rospy.get_param('~topic', 'currentGoal')
+    rospy.Subscriber(gpsTopic, NavSatFix, gpsPosCallback)
+    rospy.Subscriber(megaTopic, Decision, decisionCallback)
     timer = rospy.Timer(rospy.Duration(0.2), publisherCallback)
     start = time.perf_counter()
     rospy.spin()
