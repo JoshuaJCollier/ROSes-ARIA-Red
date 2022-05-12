@@ -1,3 +1,6 @@
 [submodule "Group4Proj\\catkin_ws\\src\\rosaria"]
 	path = Group4Proj\\catkin_ws\\src\\rosaria
 	url = https://github.com/amor-ros-pkg/rosaria
+[submodule "Group4Proj\\catkin_ws\\src\\luxonis\\depthai-ros\\"]
+	path = Group4Proj\\catkin_ws\\src\\luxonis\\depthai-ros\\
+	url = https://github.com/luxonis/depthai-ros
