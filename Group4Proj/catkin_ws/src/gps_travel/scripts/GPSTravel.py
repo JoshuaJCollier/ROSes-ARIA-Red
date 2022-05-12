@@ -12,6 +12,9 @@ from sensor_msgs.msg import NavSatFix
 currentGPSPos = (0, 0)
 currentGoal = 0
 startHeading = 0
+gps_travel_on = 0
+startTime = 0
+
 facing = False
 start = 0
 
@@ -20,9 +23,11 @@ gpsStarted = False
 pub = rospy.Publisher("gps_travel_cmd_vel", Twist, queue_size=10)
 
 def decisionCallback(data):
-    global gpsStarted, currentGoal, startHeading
+    global gpsStarted, currentGoal, startHeading, gps_travel_on, startTime
     currentGoal = data.currentGoal
     startHeading = data.startHeading
+    gps_travel_on = data.gps_travel_on
+    startTime = data.startTime
 
 def gpsPosCallback(data):
     global gpsStarted, currentGPSPos
@@ -31,10 +36,10 @@ def gpsPosCallback(data):
         gpsStarted = True
     
 def publisherCallback(event):
-    global gpsStarted, pub, currentGPSPos, facing, start, startHeading
+    global gpsStarted, pub, currentGPSPos, facing, start, currentGoal, startHeading, gps_travel_on, startTime
     if (not gpsStarted):
         start = time.perf_counter()
-    if (gpsStarted):
+    if (gpsStarted and gps_travel_on):
         goals = [(2, 2), (1, 5), (1, 4)]
         relativeGoals = []
         for i in range(len(goals)):
@@ -49,13 +54,16 @@ def publisherCallback(event):
         dist = math.sqrt(math.pow(goal[1], 2) + math.pow(goal[0],2))
         
         # make this based on the heading thing instead, and then the other is an elif
-        if (time.perf_counter() < (start+alpha*2)):
-            msg.angular.z = -0.5
-        # CHange this to dist > 1  
-        if (time.perf_counter() < (start+dist*2+alpha*2)) and (time.perf_counter() > (start+alpha*2)):
+        if (time.perf_counter() < (startTime+alpha*2)):
+            if alpha > 180:
+                msg.angular.z = -0.5
+            else:
+                msg.angular.z = 0.5
+        # time.perf_counter() < (start+dist*2+alpha*2)) and (time.perf_counter() > (start+alpha*2) 
+        if (dist > 2):
             msg.linear.x = 0.5
         # Make this the else
-        elif (time.perf_counter() > (start+dist*2)):
+        elif (dist < 2):
             msg.linear.x = 0
                 
         pub.publish(msg)
