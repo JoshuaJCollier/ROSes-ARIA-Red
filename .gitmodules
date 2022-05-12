@@ -1,0 +1,3 @@
+[submodule "Group4Proj\\catkin_ws\\src\\rosaria"]
+	path = Group4Proj\\catkin_ws\\src\\rosaria
+	url = https://github.com/amor-ros-pkg/rosaria
