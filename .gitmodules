@@ -10,3 +10,6 @@
 [submodule "Group4Proj\\catkin_ws\\AriaCoda\\"]
 	path = Group4Proj\\catkin_ws\\AriaCoda\\
 	url = https://github.com/reedhedges/AriaCoda
+[submodule "Group4Proj\\catkin_ws\\src\\joystick_drivers\\"]
+	path = Group4Proj\\catkin_ws\\src\\joystick_drivers\\
+	url = https://github.com/ros-drivers/joystick_drivers
