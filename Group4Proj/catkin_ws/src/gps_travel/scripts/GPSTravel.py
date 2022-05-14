@@ -58,13 +58,18 @@ def publisherCallback(event):
             alpha += 2*math.py
 
         # make this based on the heading thing instead, and then the other is an elif
+        # we are turning at 0.5 radians per second for the radian difference times by 2
         if (time.perf_counter() < (startTime+alpha*2)):
             if alpha > 0:
                 msg.angular.z = 0.5
             else:
                 msg.angular.z = -0.5
-        # time.perf_counter() < (start+dist*2+alpha*2)) and (time.perf_counter() > (start+alpha*2) 
-        elif (dist > 0.0001):
+        
+        # some math gave the following result:
+        # (31.98109143766833-31.98052883658287)/62 ~= 0.00001, which is the difference between
+        # two GPS coordinates 62 meters away, thus 0.00001 is equivilent to 1m, below 2m distance
+        # is used as the distance from the goal
+        elif (dist > 0.00002):
             msg.linear.x = 0.5
         # Make this the else
         else:

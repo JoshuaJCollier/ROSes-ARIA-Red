@@ -39,10 +39,6 @@ def medianFilter(gpsPoints):
     # get the index of the median sum (5th or 6th element)
     index = sumPoints[5][1]
     
-    print("sorted list of sums is: " + str(sumPoints))
-    print("middle index is: " + str(index))
-    print("median gps point is: " + str(gpsPoints[index]))
-    
     return gpsPoints[index]
 
 def gpsPosCallback(data):
