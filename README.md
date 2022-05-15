@@ -7,8 +7,8 @@ Tasks to Complete:
 3. At each waypoint, a bucket will be in the vicinity. Identify it and take a picture and record its distance.
 4. After finishing the course, print cone and bucket pictures and bucket distances to screen.
 5. Record the path and display it graphically.
-6. Implement UI with graphic and text to display internal state and intended actions (print mindState and explain what it does).
-7. Avoid collision with cones and obstacles including moving and stationary.
+6. Implement UI with graphic and ~~text to display internal state and intended actions~~ (print mindState and explain what it does).
+7. ~~Avoid collision with cones and obstacles including moving and stationary.~~
 8. ~~For safety reasons, implement bluetooth with auto and manual~~
 
 For me to copy code from the bot to my computer, if you want to get a copy change the second directory to somewhere on your computer
