@@ -16,6 +16,12 @@ For me to copy code from the bot to my computer, if you want to get a copy chang
 scp -r * netipc@192.168.2.156:~/Desktop/Group4Proj "C:\Users\josh\OneDrive - The University of Western Australia\UWA\Postgrad\UWA Year 5 - Masters\Y5S1\AUTO4508 - Mobile Robots\CODE_ON_BOT\Group4Proj" 
 ```
 
+Working out for GPS Stuff:
+https://boulter.com/gps/distance/?from=-31.98052883658287+115.81716552265434&to=-31.98109143766833+115.81716552265429&units=k
+https://www.gps-coordinates.net/
+Calcs: (31.98109143766833-31.98052883658287)/62
+
+
 # To connect to bot
 Join Wi-Fi
 - Name: Stealth-2G
