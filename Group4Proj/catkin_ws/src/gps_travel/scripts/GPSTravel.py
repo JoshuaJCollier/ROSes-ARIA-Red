@@ -53,9 +53,9 @@ def publisherCallback(event):
         alpha = startHeading - math.atan2(goal[1],goal[0])
         dist = math.sqrt(math.pow(goal[1], 2) + math.pow(goal[0],2))
         if alpha > math.pi:
-            alpha -= 2*math.py
-        elif alpha < -math.py:
-            alpha += 2*math.py
+            alpha -= 2*math.pi
+        elif alpha < -math.pi:
+            alpha += 2*math.pi
 
         # make this based on the heading thing instead, and then the other is an elif
         # we are turning at 0.5 radians per second for the radian difference times by 2

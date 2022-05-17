@@ -27,13 +27,15 @@ struct Decision_
     : currentGoal(0)
     , startHeading(0.0)
     , startTime(0.0)
-    , gps_travel_on(0)  {
+    , gps_travel_on(0)
+    , mindState(0)  {
     }
   Decision_(const ContainerAllocator& _alloc)
     : currentGoal(0)
     , startHeading(0.0)
     , startTime(0.0)
-    , gps_travel_on(0)  {
+    , gps_travel_on(0)
+    , mindState(0)  {
   (void)_alloc;
     }
 
@@ -50,6 +52,9 @@ struct Decision_
 
    typedef int32_t _gps_travel_on_type;
   _gps_travel_on_type gps_travel_on;
+
+   typedef int32_t _mindState_type;
+  _mindState_type mindState;
 
 
 
@@ -83,7 +88,8 @@ bool operator==(const ::megamind::Decision_<ContainerAllocator1> & lhs, const ::
   return lhs.currentGoal == rhs.currentGoal &&
     lhs.startHeading == rhs.startHeading &&
     lhs.startTime == rhs.startTime &&
-    lhs.gps_travel_on == rhs.gps_travel_on;
+    lhs.gps_travel_on == rhs.gps_travel_on &&
+    lhs.mindState == rhs.mindState;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -140,12 +146,12 @@ struct MD5Sum< ::megamind::Decision_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "64f33f84960e1def33c8809e718d04ee";
+    return "af844dac541f02d8db9a23f015cc9488";
   }
 
   static const char* value(const ::megamind::Decision_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x64f33f84960e1defULL;
-  static const uint64_t static_value2 = 0x33c8809e718d04eeULL;
+  static const uint64_t static_value1 = 0xaf844dac541f02d8ULL;
+  static const uint64_t static_value2 = 0xdb9a23f015cc9488ULL;
 };
 
 template<class ContainerAllocator>
@@ -168,6 +174,7 @@ struct Definition< ::megamind::Decision_<ContainerAllocator> >
 "float32 startHeading\n"
 "float32 startTime\n"
 "int32 gps_travel_on\n"
+"int32 mindState\n"
 ;
   }
 
@@ -190,6 +197,7 @@ namespace serialization
       stream.next(m.startHeading);
       stream.next(m.startTime);
       stream.next(m.gps_travel_on);
+      stream.next(m.mindState);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -216,6 +224,8 @@ struct Printer< ::megamind::Decision_<ContainerAllocator> >
     Printer<float>::stream(s, indent + "  ", v.startTime);
     s << indent << "gps_travel_on: ";
     Printer<int32_t>::stream(s, indent + "  ", v.gps_travel_on);
+    s << indent << "mindState: ";
+    Printer<int32_t>::stream(s, indent + "  ", v.mindState);
   }
 };
 

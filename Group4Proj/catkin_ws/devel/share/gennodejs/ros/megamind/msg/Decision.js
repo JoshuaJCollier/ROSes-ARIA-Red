@@ -22,6 +22,7 @@ class Decision {
       this.startHeading = null;
       this.startTime = null;
       this.gps_travel_on = null;
+      this.mindState = null;
     }
     else {
       if (initObj.hasOwnProperty('currentGoal')) {
@@ -48,6 +49,12 @@ class Decision {
       else {
         this.gps_travel_on = 0;
       }
+      if (initObj.hasOwnProperty('mindState')) {
+        this.mindState = initObj.mindState
+      }
+      else {
+        this.mindState = 0;
+      }
     }
   }
 
@@ -61,6 +68,8 @@ class Decision {
     bufferOffset = _serializer.float32(obj.startTime, buffer, bufferOffset);
     // Serialize message field [gps_travel_on]
     bufferOffset = _serializer.int32(obj.gps_travel_on, buffer, bufferOffset);
+    // Serialize message field [mindState]
+    bufferOffset = _serializer.int32(obj.mindState, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -76,11 +85,13 @@ class Decision {
     data.startTime = _deserializer.float32(buffer, bufferOffset);
     // Deserialize message field [gps_travel_on]
     data.gps_travel_on = _deserializer.int32(buffer, bufferOffset);
+    // Deserialize message field [mindState]
+    data.mindState = _deserializer.int32(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 16;
+    return 20;
   }
 
   static datatype() {
@@ -90,7 +101,7 @@ class Decision {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '64f33f84960e1def33c8809e718d04ee';
+    return 'af844dac541f02d8db9a23f015cc9488';
   }
 
   static messageDefinition() {
@@ -100,6 +111,7 @@ class Decision {
     float32 startHeading
     float32 startTime
     int32 gps_travel_on
+    int32 mindState
     
     `;
   }
@@ -136,6 +148,13 @@ class Decision {
     }
     else {
       resolved.gps_travel_on = 0
+    }
+
+    if (msg.mindState !== undefined) {
+      resolved.mindState = msg.mindState;
+    }
+    else {
+      resolved.mindState = 0
     }
 
     return resolved;

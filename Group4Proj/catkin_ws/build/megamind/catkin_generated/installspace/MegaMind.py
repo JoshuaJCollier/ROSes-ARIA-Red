@@ -62,7 +62,7 @@ def gpsTravelSubCallback(data):
     gps_travel_cmd_vel_msg = data
 
 def publisherCallback(event):
-    global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_avoid_cmd_vel_msg, controller_joy_in, mindState, decision, startHeadingTime, foundHeading
+    global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_avoid_cmd_vel_msg, controller_joy_in, mindState, decision, startHeadingTime, foundHeading, firstPos, secondPos
     # Mind State Definitions: 0 -> Goal Seeking, 1 -> Object Avoidance, 2 -> Cone Finding, 3 -> Cone Picture, 4 -> Bucket Picture
     
     msg = Twist()
@@ -70,6 +70,7 @@ def publisherCallback(event):
         # 0 -> Goal Seeking
         if (controller_joy_in.buttons[0] == 1):
             if (mindState == 0): # ------------- GOAL SEEKING -------------
+                # FIRST CALCULATE THE HEADING
                 goalIncreased = False
                 if (len(firstPos) < 10):
                     decision.gps_travel_on = 0
@@ -88,9 +89,8 @@ def publisherCallback(event):
                         decision.startTime = time.perf_counter()
                         foundHeading = True
                         decision.gps_travel_on = 1
-                # do the find heading thing here, then set gps_travel to 1
-
-                # if we see something 
+                
+                # HEADING IS SET, USE GPS TRAVEL TO MOVE
                 if decision.gps_travel_on == 1:
                     msg = gps_travel_cmd_vel_msg
 
@@ -98,6 +98,7 @@ def publisherCallback(event):
                 # decision.currentGoal = 1 or 2
 
             elif (mindState == 1): # ------------- OBJECT AVOIDANCE -------------
+                # HARD CODED OBSTACLE AVOIDANCE
                 if object_avoid_cmd_vel_msg.moving == 1:
                     msg.linear.x = 0
                     msg.angular.z = 0
@@ -120,25 +121,41 @@ def publisherCallback(event):
                     else:
                         msg.linear.x = 0
                         msg.angular.z = 0
+                        mindState = 0
+                # MOVING OBSTACLE SHOULD BE AVOIDED
+
+                # ONCE OBSTACLE IS GONE RETURN TO GOAL SEEKING
                 if object_avoid_cmd_vel_msg.gone:
                     mindState = 0
                     
-            elif (mindState == 3): # ------------- CONE PICTURE -------------
-                # resetting these such that we can goal seek again, with the next goal
+                if object_avoid_cmd_vel_msg.cone:
+                    mindState = 2
+                    
+            elif (mindState == 2): # ------------- CONE FINDING -------------
+                # RESETTING SUCH THAT WE CAN GOAL SEEK FOR THE NEXT GOAL AFTER PICTURE AND STUFF
                 if not goalIncreased:
                     goalIncreased = True
                     decision.currentGoal += 1
                 decision.gps_travel_on = 0
                 firstPos = []
                 secondPos = []
-                
-            # if (goal has been reached):
-            #     goal.currentGoal += 1
-
-            # cmdVelPub.publish(msg)
-            # decision.startTime = time.perf_counter()
+            
+            elif (mindState == 3): # ------------- CONE PICTURE -------------
+                # take picture somehow
+                x = 1
+            
+            elif (mindState == 4): # ------------- BUCKET PICTURE -------------
+                # take picture again but bucket this time
+                x = 2
+            
+            # read from megaPub, might be best to publish mindState and stuff
+            # can also at some point use a matplotlib program to plot path
+            # for distance need to use depth cloud, for picture need to use OAK
+            # for objects we need distance and if its moving, aside from all
+            # this its looking good I think
+            decision.mindState = mindState
             megaPub.publish(decision)
-        elif (mindState == 7): #controller_joy_in.buttons[1] == 1):
+        elif (controller_joy_in.buttons[1] == 1):
             print("Manual")
             # remap controller to direct cmd_vel controls
             msg.linear.x = controller_joy_in.buttons[13] - controller_joy_in.buttons[14] #controller_joy_in.axes[1] # Up/Down of Left Stick
@@ -160,7 +177,7 @@ def main():
     start = time.perf_counter()
     decision.currentGoal = 0
     # IN ORDER TO START PROGRAM, MIND STATE MUST BE SET TO 0
-    mindState = 7
+    mindState = 0
     
     rospy.spin()
     timer.shutdown()
@@ -168,4 +185,5 @@ def main():
 if __name__ == '__main__':
     print("Running")
     main()
+
 

@@ -62,7 +62,7 @@ def gpsTravelSubCallback(data):
     gps_travel_cmd_vel_msg = data
 
 def publisherCallback(event):
-    global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_avoid_cmd_vel_msg, controller_joy_in, mindState, decision, startHeadingTime, foundHeading
+    global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_avoid_cmd_vel_msg, controller_joy_in, mindState, decision, startHeadingTime, foundHeading, firstPos, secondPos
     # Mind State Definitions: 0 -> Goal Seeking, 1 -> Object Avoidance, 2 -> Cone Finding, 3 -> Cone Picture, 4 -> Bucket Picture
     
     msg = Twist()
@@ -153,13 +153,16 @@ def publisherCallback(event):
             # for distance need to use depth cloud, for picture need to use OAK
             # for objects we need distance and if its moving, aside from all
             # this its looking good I think
-            
+            decision.mindState = mindState
             megaPub.publish(decision)
         elif (controller_joy_in.buttons[1] == 1):
             print("Manual")
             # remap controller to direct cmd_vel controls
             msg.linear.x = controller_joy_in.buttons[13] - controller_joy_in.buttons[14] #controller_joy_in.axes[1] # Up/Down of Left Stick
             msg.angular.z = controller_joy_in.buttons[15] - controller_joy_in.buttons[16] #controller_joy_in.axes[3] # Left/Right of Right Stick
+            dec2 = Decision()
+            dec2.mindState = 5
+            megaPub.publish(dec2)
         cmdVelPub.publish(msg)
 
 def main():
@@ -177,7 +180,7 @@ def main():
     start = time.perf_counter()
     decision.currentGoal = 0
     # IN ORDER TO START PROGRAM, MIND STATE MUST BE SET TO 0
-    mindState = 7
+    mindState = 0
     
     rospy.spin()
     timer.shutdown()
@@ -185,4 +188,5 @@ def main():
 if __name__ == '__main__':
     print("Running")
     main()
+
 

@@ -7,4 +7,6 @@
           STARTTIME
           GPS_TRAVEL_ON-VAL
           GPS_TRAVEL_ON
+          MINDSTATE-VAL
+          MINDSTATE
 ))

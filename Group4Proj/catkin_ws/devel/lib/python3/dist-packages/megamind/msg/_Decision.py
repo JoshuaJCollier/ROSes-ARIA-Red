@@ -8,16 +8,17 @@ import struct
 
 
 class Decision(genpy.Message):
-  _md5sum = "64f33f84960e1def33c8809e718d04ee"
+  _md5sum = "af844dac541f02d8db9a23f015cc9488"
   _type = "megamind/Decision"
   _has_header = False  # flag to mark the presence of a Header object
   _full_text = """int32 currentGoal
 float32 startHeading
 float32 startTime
 int32 gps_travel_on
+int32 mindState
 """
-  __slots__ = ['currentGoal','startHeading','startTime','gps_travel_on']
-  _slot_types = ['int32','float32','float32','int32']
+  __slots__ = ['currentGoal','startHeading','startTime','gps_travel_on','mindState']
+  _slot_types = ['int32','float32','float32','int32','int32']
 
   def __init__(self, *args, **kwds):
     """
@@ -27,7 +28,7 @@ int32 gps_travel_on
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       currentGoal,startHeading,startTime,gps_travel_on
+       currentGoal,startHeading,startTime,gps_travel_on,mindState
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -44,11 +45,14 @@ int32 gps_travel_on
         self.startTime = 0.
       if self.gps_travel_on is None:
         self.gps_travel_on = 0
+      if self.mindState is None:
+        self.mindState = 0
     else:
       self.currentGoal = 0
       self.startHeading = 0.
       self.startTime = 0.
       self.gps_travel_on = 0
+      self.mindState = 0
 
   def _get_types(self):
     """
@@ -63,7 +67,7 @@ int32 gps_travel_on
     """
     try:
       _x = self
-      buff.write(_get_struct_i2fi().pack(_x.currentGoal, _x.startHeading, _x.startTime, _x.gps_travel_on))
+      buff.write(_get_struct_i2f2i().pack(_x.currentGoal, _x.startHeading, _x.startTime, _x.gps_travel_on, _x.mindState))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -78,8 +82,8 @@ int32 gps_travel_on
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.currentGoal, _x.startHeading, _x.startTime, _x.gps_travel_on,) = _get_struct_i2fi().unpack(str[start:end])
+      end += 20
+      (_x.currentGoal, _x.startHeading, _x.startTime, _x.gps_travel_on, _x.mindState,) = _get_struct_i2f2i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -93,7 +97,7 @@ int32 gps_travel_on
     """
     try:
       _x = self
-      buff.write(_get_struct_i2fi().pack(_x.currentGoal, _x.startHeading, _x.startTime, _x.gps_travel_on))
+      buff.write(_get_struct_i2f2i().pack(_x.currentGoal, _x.startHeading, _x.startTime, _x.gps_travel_on, _x.mindState))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -109,8 +113,8 @@ int32 gps_travel_on
       end = 0
       _x = self
       start = end
-      end += 16
-      (_x.currentGoal, _x.startHeading, _x.startTime, _x.gps_travel_on,) = _get_struct_i2fi().unpack(str[start:end])
+      end += 20
+      (_x.currentGoal, _x.startHeading, _x.startTime, _x.gps_travel_on, _x.mindState,) = _get_struct_i2f2i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -119,9 +123,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_i2fi = None
-def _get_struct_i2fi():
-    global _struct_i2fi
-    if _struct_i2fi is None:
-        _struct_i2fi = struct.Struct("<i2fi")
-    return _struct_i2fi
+_struct_i2f2i = None
+def _get_struct_i2f2i():
+    global _struct_i2f2i
+    if _struct_i2f2i is None:
+        _struct_i2f2i = struct.Struct("<i2f2i")
+    return _struct_i2f2i
