@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/gennodejs/ros/megamind/msg/CurrentGoal.js"
+  "/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/gennodejs/ros/megamind/msg/Decision.js"
   "CMakeFiles/megamind_generate_messages_nodejs"
 )
 

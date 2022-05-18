@@ -53,21 +53,21 @@ CMAKE_BINARY_DIR = /home/netipc/Desktop/Group4Proj/catkin_ws/build
 # Include the progress variables for this target.
 include megamind/CMakeFiles/megamind_generate_messages_eus.dir/progress.make
 
-megamind/CMakeFiles/megamind_generate_messages_eus: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg/CurrentGoal.l
+megamind/CMakeFiles/megamind_generate_messages_eus: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg/Decision.l
 megamind/CMakeFiles/megamind_generate_messages_eus: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/manifest.l
 
 
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg/CurrentGoal.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg/CurrentGoal.l: /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from megamind/CurrentGoal.msg"
-	cd /home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg -Imegamind:/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p megamind -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg/Decision.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg/Decision.l: /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from megamind/Decision.msg"
+	cd /home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg -Imegamind:/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p megamind -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg
 
 /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for megamind"
 	cd /home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind megamind std_msgs
 
 megamind_generate_messages_eus: megamind/CMakeFiles/megamind_generate_messages_eus
-megamind_generate_messages_eus: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg/CurrentGoal.l
+megamind_generate_messages_eus: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/msg/Decision.l
 megamind_generate_messages_eus: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/roseus/ros/megamind/manifest.l
 megamind_generate_messages_eus: megamind/CMakeFiles/megamind_generate_messages_eus.dir/build.make
 
