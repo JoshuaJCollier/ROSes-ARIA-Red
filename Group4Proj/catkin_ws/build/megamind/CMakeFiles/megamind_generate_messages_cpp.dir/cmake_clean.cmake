@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/Decision.h"
+  "/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/CurrentGoal.h"
   "CMakeFiles/megamind_generate_messages_cpp"
 )
 

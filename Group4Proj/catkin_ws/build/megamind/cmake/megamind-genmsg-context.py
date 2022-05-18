@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg"
+messages_str = "/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg"
 services_str = ""
 pkg_name = "megamind"
 dependencies_str = "std_msgs"

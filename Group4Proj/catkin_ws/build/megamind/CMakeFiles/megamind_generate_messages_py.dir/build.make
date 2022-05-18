@@ -53,22 +53,22 @@ CMAKE_BINARY_DIR = /home/netipc/Desktop/Group4Proj/catkin_ws/build
 # Include the progress variables for this target.
 include megamind/CMakeFiles/megamind_generate_messages_py.dir/progress.make
 
-megamind/CMakeFiles/megamind_generate_messages_py: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_Decision.py
+megamind/CMakeFiles/megamind_generate_messages_py: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_CurrentGoal.py
 megamind/CMakeFiles/megamind_generate_messages_py: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/__init__.py
 
 
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_Decision.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_Decision.py: /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG megamind/Decision"
-	cd /home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg -Imegamind:/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p megamind -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_CurrentGoal.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_CurrentGoal.py: /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG megamind/CurrentGoal"
+	cd /home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg -Imegamind:/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p megamind -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg
 
 /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/__init__.py: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_Decision.py
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/__init__.py: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_CurrentGoal.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for megamind"
 	cd /home/netipc/Desktop/Group4Proj/catkin_ws/build/megamind && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg --initpy
 
 megamind_generate_messages_py: megamind/CMakeFiles/megamind_generate_messages_py
-megamind_generate_messages_py: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_Decision.py
+megamind_generate_messages_py: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/_CurrentGoal.py
 megamind_generate_messages_py: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib/python3/dist-packages/megamind/msg/__init__.py
 megamind_generate_messages_py: megamind/CMakeFiles/megamind_generate_messages_py.dir/build.make
 

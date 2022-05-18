@@ -1,8 +1,8 @@
 
 "use strict";
 
-let Decision = require('./Decision.js');
+let CurrentGoal = require('./CurrentGoal.js');
 
 module.exports = {
-  Decision: Decision,
+  CurrentGoal: CurrentGoal,
 };

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 import rospy
 import sys
 import time
@@ -6,7 +6,6 @@ import math
 
 # Predefined message data
 from geometry_msgs.msg import Twist
-from megamind.msg import CurrentGoal
 from sensor_msgs.msg import NavSatFix
 
 currentGPSPos = (0, 0)
@@ -14,22 +13,21 @@ currentGoal = 0
 facing = False
 start = 0
 
+last_data = ""
 gpsStarted = False
 # "gpstravel_cmd_vel"
-pub = rospy.Publisher("gps_travel_cmd_vel", Twist, queue_size=10)
-
-def currentGoalCallback(data):
-    global gpsStarted, currentGoal
-    currentGoal = data.currentGoal
+pub = rospy.Publisher("RosAria/cmd_vel", Twist, queue_size=10)
 
 def gpsPosCallback(data):
-    global gpsStarted, currentGPSPos
+    global gpsStarted, last_data
+    last_data = data
     currentGPSPos = (data.latitude, data.longitude)
+    print("Received {}".format(currentGPSPos))
     if (not gpsStarted):
         gpsStarted = True
 
-def publisherCallback(event):
-    global gpsStarted, pub, currentGPSPos, facing, start
+def timer_callback(event):
+    global gpsStarted, pub, last_data, currentGPSPos, facing, start
     if (not gpsStarted):
         start = time.perf_counter()
     if (gpsStarted):
@@ -57,15 +55,14 @@ def publisherCallback(event):
         # msg.angular.z = -0.5 # positive angular z is turning counter clockwise (radians per second)
         
         pub.publish(msg)
+        print("Published {}".format(last_data))
 
 def main():
     global start
     rospy.init_node('GPSTravel', anonymous=True)
     subTopic = rospy.get_param('~topic', 'fix')
-    goalTopic = rospy.get_param('~topic', 'currentGoal')
     rospy.Subscriber(subTopic, NavSatFix, gpsPosCallback)
-    rospy.Subscriber(goalTopic, CurrentGoal, currentGoalCallback)
-    timer = rospy.Timer(rospy.Duration(0.2), publisherCallback)
+    timer = rospy.Timer(rospy.Duration(0.2), timer_callback)
     start = time.perf_counter()
     rospy.spin()
     timer.shutdown()
@@ -180,4 +177,3 @@ if __name__ == '__main__':
         ne = GPSTravel()
     except rospy.ROSInterruptException: pass
 '''
-

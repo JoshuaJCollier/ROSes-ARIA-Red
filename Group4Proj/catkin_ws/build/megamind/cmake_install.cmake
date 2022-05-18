@@ -38,7 +38,7 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/megamind/msg" TYPE FILE FILES "/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/megamind/msg" TYPE FILE FILES "/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

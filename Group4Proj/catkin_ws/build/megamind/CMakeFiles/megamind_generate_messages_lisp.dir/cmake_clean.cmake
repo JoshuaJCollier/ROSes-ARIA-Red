@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/Decision.lisp"
+  "/home/netipc/Desktop/Group4Proj/catkin_ws/devel/share/common-lisp/ros/megamind/msg/CurrentGoal.lisp"
   "CMakeFiles/megamind_generate_messages_lisp"
 )
 

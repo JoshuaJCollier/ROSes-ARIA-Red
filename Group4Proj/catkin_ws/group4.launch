@@ -3,9 +3,6 @@
   <node name="RosAria" pkg="rosaria" type="RosAria">
     <param name="port" value="/dev/ttyS1" />
   </node>
-  
-  <node name="Joy" pkg="joy" type="joy_node">
-  </node>
 
   <node name="nmea_serial_driver_node" pkg="nmea_navsat_driver" type="nmea_serial_driver">
     <param name="port" value="/dev/ttyACM0" />

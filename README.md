@@ -1,26 +1,10 @@
 # AUTO4508-Project Group 4
 Github repo for code compilation to operate Pioneer Robot. Below are instructions for connecting to the bot and installing nodes, as well as compiling and running.
 
-Tasks to Complete:
-1. ~~Drive the robot along a path, specified through a number of given GPS waypoints. The robot has to visit each waypoint before returning to its starting position.~~
-2. Each waypoint is marked by a cone. Whenever a waypoint has been reached (with reasonable accuracy), the robot must take a photo of the cone and head towards the next waypoint.
-3. At each waypoint, a bucket will be in the vicinity. Identify it and take a picture and record its distance.
-4. After finishing the course, print cone and bucket pictures and bucket distances to screen.
-5. Record the path and display it graphically.
-6. Implement UI with graphic and ~~text to display internal state and intended actions~~ (print mindState and explain what it does).
-7. ~~Avoid collision with cones and obstacles including moving and stationary.~~
-8. ~~For safety reasons, implement bluetooth with auto and manual~~
-
 For me to copy code from the bot to my computer, if you want to get a copy change the second directory to somewhere on your computer
 ```
 scp -r * netipc@192.168.2.156:~/Desktop/Group4Proj "C:\Users\josh\OneDrive - The University of Western Australia\UWA\Postgrad\UWA Year 5 - Masters\Y5S1\AUTO4508 - Mobile Robots\CODE_ON_BOT\Group4Proj" 
 ```
-
-Working out for GPS Stuff:
-https://boulter.com/gps/distance/?from=-31.98052883658287+115.81716552265434&to=-31.98109143766833+115.81716552265429&units=k
-https://www.gps-coordinates.net/
-Calcs: (31.98109143766833-31.98052883658287)/62
-
 
 # To connect to bot
 Join Wi-Fi

@@ -52,27 +52,18 @@ def publisherCallback(event):
         # calculate heading and distance
         alpha = startHeading - math.atan2(goal[1],goal[0])
         dist = math.sqrt(math.pow(goal[1], 2) + math.pow(goal[0],2))
-        if alpha > math.pi:
-            alpha -= 2*math.pi
-        elif alpha < -math.pi:
-            alpha += 2*math.pi
-
-        # make this based on the heading thing instead, and then the other is an elif
-        # we are turning at 0.5 radians per second for the radian difference times by 2
-        if (time.perf_counter() < (startTime+alpha*2)):
-            if alpha > 0:
-                msg.angular.z = 0.5
-            else:
-                msg.angular.z = -0.5
         
-        # some math gave the following result:
-        # (31.98109143766833-31.98052883658287)/62 ~= 0.00001, which is the difference between
-        # two GPS coordinates 62 meters away, thus 0.00001 is equivilent to 1m, below 2m distance
-        # is used as the distance from the goal
-        elif (dist > 0.00002):
+        # make this based on the heading thing instead, and then the other is an elif
+        if (time.perf_counter() < (startTime+alpha*2)):
+            if alpha > 180:
+                msg.angular.z = -0.5
+            else:
+                msg.angular.z = 0.5
+        # time.perf_counter() < (start+dist*2+alpha*2)) and (time.perf_counter() > (start+alpha*2) 
+        if (dist > 2):
             msg.linear.x = 0.5
         # Make this the else
-        else:
+        elif (dist < 2):
             msg.linear.x = 0
                 
         pub.publish(msg)
@@ -81,7 +72,7 @@ def main():
     global start
     rospy.init_node('GPSTravel', anonymous=True)
     gpsTopic = rospy.get_param('~topic', 'fix')
-    megaTopic = rospy.get_param('~topic', 'decision')
+    megaTopic = rospy.get_param('~topic', 'currentGoal')
     rospy.Subscriber(gpsTopic, NavSatFix, gpsPosCallback)
     rospy.Subscriber(megaTopic, Decision, decisionCallback)
     timer = rospy.Timer(rospy.Duration(0.2), publisherCallback)

@@ -53,17 +53,17 @@ CMAKE_BINARY_DIR = /home/netipc/Desktop/Group4Proj/catkin_ws/build
 # Include the progress variables for this target.
 include megamind/CMakeFiles/megamind_generate_messages_cpp.dir/progress.make
 
-megamind/CMakeFiles/megamind_generate_messages_cpp: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/Decision.h
+megamind/CMakeFiles/megamind_generate_messages_cpp: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/CurrentGoal.h
 
 
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/Decision.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/Decision.h: /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg
-/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/Decision.h: /opt/ros/noetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from megamind/Decision.msg"
-	cd /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind && /home/netipc/Desktop/Group4Proj/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/Decision.msg -Imegamind:/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p megamind -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind -e /opt/ros/noetic/share/gencpp/cmake/..
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/CurrentGoal.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/CurrentGoal.h: /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg
+/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/CurrentGoal.h: /opt/ros/noetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from megamind/CurrentGoal.msg"
+	cd /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind && /home/netipc/Desktop/Group4Proj/catkin_ws/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg/CurrentGoal.msg -Imegamind:/home/netipc/Desktop/Group4Proj/catkin_ws/src/megamind/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p megamind -o /home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind -e /opt/ros/noetic/share/gencpp/cmake/..
 
 megamind_generate_messages_cpp: megamind/CMakeFiles/megamind_generate_messages_cpp
-megamind_generate_messages_cpp: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/Decision.h
+megamind_generate_messages_cpp: /home/netipc/Desktop/Group4Proj/catkin_ws/devel/include/megamind/CurrentGoal.h
 megamind_generate_messages_cpp: megamind/CMakeFiles/megamind_generate_messages_cpp.dir/build.make
 
 .PHONY : megamind_generate_messages_cpp
