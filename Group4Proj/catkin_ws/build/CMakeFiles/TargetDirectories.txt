@@ -43,6 +43,13 @@
 /home/netipc/Desktop/Group4Proj/catkin_ws/build/gps_travel/CMakeFiles/edit_cache.dir
 /home/netipc/Desktop/Group4Proj/catkin_ws/build/gps_travel/CMakeFiles/test.dir
 /home/netipc/Desktop/Group4Proj/catkin_ws/build/gps_travel/CMakeFiles/_catkin_empty_exported_target.dir
+/home/netipc/Desktop/Group4Proj/catkin_ws/build/gui/CMakeFiles/install/strip.dir
+/home/netipc/Desktop/Group4Proj/catkin_ws/build/gui/CMakeFiles/install/local.dir
+/home/netipc/Desktop/Group4Proj/catkin_ws/build/gui/CMakeFiles/install.dir
+/home/netipc/Desktop/Group4Proj/catkin_ws/build/gui/CMakeFiles/list_install_components.dir
+/home/netipc/Desktop/Group4Proj/catkin_ws/build/gui/CMakeFiles/rebuild_cache.dir
+/home/netipc/Desktop/Group4Proj/catkin_ws/build/gui/CMakeFiles/edit_cache.dir
+/home/netipc/Desktop/Group4Proj/catkin_ws/build/gui/CMakeFiles/test.dir
 /home/netipc/Desktop/Group4Proj/catkin_ws/build/joystick_drivers/joystick_drivers/CMakeFiles/install/strip.dir
 /home/netipc/Desktop/Group4Proj/catkin_ws/build/joystick_drivers/joystick_drivers/CMakeFiles/install/local.dir
 /home/netipc/Desktop/Group4Proj/catkin_ws/build/joystick_drivers/joystick_drivers/CMakeFiles/install.dir

@@ -6,6 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("gps_travel")
+subdirs("gui")
 subdirs("joystick_drivers/joystick_drivers")
 subdirs("megamind")
 subdirs("joystick_drivers/joy")

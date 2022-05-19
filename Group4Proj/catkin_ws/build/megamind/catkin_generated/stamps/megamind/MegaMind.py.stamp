@@ -64,6 +64,13 @@ def gpsTravelSubCallback(data):
 def publisherCallback(event):
     global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_avoid_cmd_vel_msg, controller_joy_in, mindState, decision, startHeadingTime, foundHeading, firstPos, secondPos
     # Mind State Definitions: 0 -> Goal Seeking, 1 -> Object Avoidance, 2 -> Cone Finding, 3 -> Cone Picture, 4 -> Bucket Picture
+    goals = [(-31.9805773505506, 115.8171660979887), (-31.98038731577529, 115.8171782781675), (-31.98017884452402, 115.8171702857572), (-31.98082891705035, 115.8171314540043), (-31.98081842250873, 115.8174656945906), (-31.98081842250873, 115.8174656945906), (-31.98041252344407, 115.8175647311226), (-31.98052211397503, 115.8197862220968)]
+    relativeGoals = []
+    for i in range(len(goals)):
+        # relative goals
+        relativeGoals.append((goals[i][0] - currentGPSPos[0], goals[i][1] - currentGPSPos[1]))
+    
+    goal = relativeGoals[decision.currentGoal]
     
     msg = Twist()
     if (megaMindStarted):
@@ -94,7 +101,9 @@ def publisherCallback(event):
                 if decision.gps_travel_on == 1:
                     msg = gps_travel_cmd_vel_msg
 
-                # if distance to goal is small or we see the cone clearly or there is an obstacle, then 
+                    if math.sqrt(math.pow(goal[1], 2) + math.pow(goal[0],2)) < 0.00002 and msg.linear.x == 0:
+                        mindState = 2
+		# if distance to goal is small or we see the cone clearly or there is an obstacle, then 
                 # decision.currentGoal = 1 or 2
 
             elif (mindState == 1): # ------------- OBJECT AVOIDANCE -------------
@@ -136,17 +145,18 @@ def publisherCallback(event):
                 if not goalIncreased:
                     goalIncreased = True
                     decision.currentGoal += 1
+                    mindState = 0
                 decision.gps_travel_on = 0
                 firstPos = []
                 secondPos = []
             
             elif (mindState == 3): # ------------- CONE PICTURE -------------
                 # take picture somehow
-                x = 1
+                mindState = 4
             
             elif (mindState == 4): # ------------- BUCKET PICTURE -------------
                 # take picture again but bucket this time
-                x = 2
+                mindState = 0
             
             # read from megaPub, might be best to publish mindState and stuff
             # can also at some point use a matplotlib program to plot path
@@ -160,6 +170,9 @@ def publisherCallback(event):
             # remap controller to direct cmd_vel controls
             msg.linear.x = controller_joy_in.buttons[13] - controller_joy_in.buttons[14] #controller_joy_in.axes[1] # Up/Down of Left Stick
             msg.angular.z = controller_joy_in.buttons[15] - controller_joy_in.buttons[16] #controller_joy_in.axes[3] # Left/Right of Right Stick
+            dec2 = Decision()
+            dec2.mindState = 5
+            megaPub.publish(dec2)
         cmdVelPub.publish(msg)
 
 def main():
@@ -185,5 +198,6 @@ def main():
 if __name__ == '__main__':
     print("Running")
     main()
+
 
 

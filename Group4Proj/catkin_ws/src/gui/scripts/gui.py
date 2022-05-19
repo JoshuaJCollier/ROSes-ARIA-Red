@@ -12,6 +12,10 @@ from sensor_msgs.msg import NavSatFix
 decision = Decision()
 pub = rospy.Publisher("gui", Marker, queue_size=10) # change topic name
 
+def gpsPosCallback(data):
+    global gpsStarted, currentGPSPos
+    currentGPSPos = (data.latitude, data.longitude)
+
 def decisionCallback(data):
 	global decision
 	decision = data 
@@ -49,7 +53,7 @@ def publisherCallback(event):
     elif decision.mindState == 4:
         message = "taking bucket picture"
 
-    msg.text = "Current state: {}".format(message)
+    msg.text = "Current state: {}, {}.".format(decision.mindState, message)
 
     msg.scale.x = 10.0
     msg.scale.y = 10.0
@@ -64,9 +68,10 @@ def publisherCallback(event):
 
 
 def main():
-	megaTopic = rospy.get_param('~topic', 'fix')
-	rospy.Subscriber(megaTopic, Decision, decisionCallback)
-	timer = rospy.Timer(rospy.Duration(0.2), publisherCallback)
-	rospy.spin()
-	timer.shutdown()
-
+    gpsTopic = rospy.get_param('~topic', 'fix')
+    megaTopic = rospy.get_param('~topic', 'decision')
+    rospy.Subscriber(gpsTopic, NavSatFix, gpsPosCallback)
+    rospy.Subscriber(megaTopic, Decision, decisionCallback)
+    timer = rospy.Timer(rospy.Duration(0.2), publisherCallback)
+    rospy.spin()
+    timer.shutdown()
