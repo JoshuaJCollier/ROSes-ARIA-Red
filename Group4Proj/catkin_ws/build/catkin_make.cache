@@ -1,2 +1,2 @@
-gps_travel:gui:joystick_drivers/joy:joystick_drivers/joystick_drivers:joystick_drivers/spacenav_node:luxonis/depthai-ros-examples/depthai_examples:luxonis/depthai-ros/depthai_bridge:luxonis/depthai-ros/depthai_ros_msgs:megamind:rosaria
+gps_travel:gui:joystick_drivers/joy:joystick_drivers/joystick_drivers:joystick_drivers/spacenav_node:luxonis/depthai-ros-examples/depthai_examples:luxonis/depthai-ros/depthai_bridge:luxonis/depthai-ros/depthai_ros_msgs:megamind:object_tracker:rosaria:take_photo
 -DCATKIN_DEVEL_PREFIX=/home/netipc/Desktop/Group4Proj/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/netipc/Desktop/Group4Proj/catkin_ws/install -G Unix Makefiles

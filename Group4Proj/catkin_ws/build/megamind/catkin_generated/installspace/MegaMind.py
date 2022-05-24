@@ -7,12 +7,13 @@ import math
 # Predefined message data
 from geometry_msgs.msg import Twist
 from megamind.msg import Decision
+from object_detect.msg import Objects
 from sensor_msgs.msg import NavSatFix, Joy
 
 currentGPSPos = (0, 0)
 start = 0
 gps_travel_cmd_vel_msg = Twist()
-object_avoid_cmd_vel_msg = Twist()
+object_detect = Objects()
 controller_joy_in = Joy()
 mindState = 0
 decision = Decision()
@@ -47,9 +48,9 @@ def gpsPosCallback(data):
     global currentGPSPos
     currentGPSPos = (data.latitude, data.longitude)
 
-def objectAvoidSubCallback(data):
-    global object_avoid_cmd_vel_msg
-    object_avoid_cmd_vel_msg = data
+def objectDetectSubCallback(data):
+    global object_detect
+    object_detect = data
     
 def controllerSubCallback(data):
     global controller_joy_in, megaMindStarted
@@ -62,9 +63,10 @@ def gpsTravelSubCallback(data):
     gps_travel_cmd_vel_msg = data
 
 def publisherCallback(event):
-    global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_avoid_cmd_vel_msg, controller_joy_in, mindState, decision, startHeadingTime, foundHeading, firstPos, secondPos
+    global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_detect, controller_joy_in, mindState, decision, startHeadingTime, foundHeading, firstPos, secondPos
     # Mind State Definitions: 0 -> Goal Seeking, 1 -> Object Avoidance, 2 -> Cone Finding, 3 -> Cone Picture, 4 -> Bucket Picture
-    goals = [(-31.9805773505506, 115.8171660979887), (-31.98038731577529, 115.8171782781675), (-31.98017884452402, 115.8171702857572), (-31.98082891705035, 115.8171314540043), (-31.98081842250873, 115.8174656945906), (-31.98081842250873, 115.8174656945906), (-31.98041252344407, 115.8175647311226), (-31.98052211397503, 115.8197862220968)]
+    #goals = [(-31.9805773505506, 115.8171660979887), (-31.98038731577529, 115.8171782781675), (-31.98017884452402, 115.8171702857572), (-31.98082891705035, 115.8171314540043), (-31.98081842250873, 115.8174656945906), (-31.98081842250873, 115.8174656945906), (-31.98041252344407, 115.8175647311226), (-31.98052211397503, 115.8197862220968)]
+    goals = [(-31.9808289171, 115.817131454), (-31.9803873158, 115.817178278), (-31.9804125234, 115.817564731), (-31.9801788445, 115.817170286), (-31.9808289171, 115.817131454)]
     relativeGoals = []
     for i in range(len(goals)):
         # relative goals
@@ -108,23 +110,20 @@ def publisherCallback(event):
 
             elif (mindState == 1): # ------------- OBJECT AVOIDANCE -------------
                 # HARD CODED OBSTACLE AVOIDANCE
-                if object_avoid_cmd_vel_msg.moving == 1:
-                    msg.linear.x = 0
-                    msg.angular.z = 0
-                elif object_avoid_cmd_vel_msg.moving == 0 and object_avoid_cmd_vel_msg.distance < 1:
-                    if (object_avoid_cmd_vel_msg.time + math.pi*0.5 > time.perf_counter()):
+                if object_detect.obstacle == 0 and object_detect.obstacleDist < 1:
+                    if (object_detect.time + math.pi*0.5 > time.perf_counter()):
                         msg.linear.x = 0
                         msg.angular.z = 0.5
-                    elif (object_avoid_cmd_vel_msg.time + math.pi*0.5 + 1.41 > time.perf_counter()):
+                    elif (object_detect.time + math.pi*0.5 + 1.41 > time.perf_counter()):
                         msg.linear.x = 1
                         msg.angular.z = 0
-                    elif (object_avoid_cmd_vel_msg.time + math.pi*1.5 + 1.41 > time.perf_counter()):
+                    elif (object_detect.time + math.pi*1.5 + 1.41 > time.perf_counter()):
                         msg.linear.x = 0
                         msg.angular.z = -0.5
-                    elif (object_avoid_cmd_vel_msg.time + math.pi*1.5 + 2.82 > time.perf_counter()):
+                    elif (object_detect.time + math.pi*1.5 + 2.82 > time.perf_counter()):
                         msg.linear.x = 1
                         msg.angular.z = 0
-                    elif (object_avoid_cmd_vel_msg.time + math.pi*2 + 2.82 > time.perf_counter()):
+                    elif (object_detect.time + math.pi*2 + 2.82 > time.perf_counter()):
                         msg.linear.x = 0
                         msg.angular.z = 0.5
                     else:
@@ -134,9 +133,6 @@ def publisherCallback(event):
                 # MOVING OBSTACLE SHOULD BE AVOIDED
 
                 # ONCE OBSTACLE IS GONE RETURN TO GOAL SEEKING
-                if object_avoid_cmd_vel_msg.gone:
-                    mindState = 0
-                    
                 if object_avoid_cmd_vel_msg.cone:
                     mindState = 2
                     
@@ -145,7 +141,7 @@ def publisherCallback(event):
                 if not goalIncreased:
                     goalIncreased = True
                     decision.currentGoal += 1
-                    mindState = 0
+                    mindState = 3
                 decision.gps_travel_on = 0
                 firstPos = []
                 secondPos = []
@@ -156,7 +152,8 @@ def publisherCallback(event):
             
             elif (mindState == 4): # ------------- BUCKET PICTURE -------------
                 # take picture again but bucket this time
-                mindState = 0
+                if (object_detect.bucket == 1):
+                    mindState = 0
             
             # read from megaPub, might be best to publish mindState and stuff
             # can also at some point use a matplotlib program to plot path
@@ -173,6 +170,9 @@ def publisherCallback(event):
             dec2 = Decision()
             dec2.mindState = 5
             megaPub.publish(dec2)
+        else:
+            msg.linear.x = 0
+            msg.angular.z = 0
         cmdVelPub.publish(msg)
 
 def main():
@@ -180,11 +180,11 @@ def main():
     rospy.init_node('GPSTravel', anonymous=True)
     fixSub = rospy.get_param('~topic', 'fix')
     gpsTravelSub = rospy.get_param('~topic', 'gps_travel_cmd_vel')
-    objAvoidSub = rospy.get_param('~topic', 'object_avoid_cmd_vel')
+    objDetectSub = rospy.get_param('~topic', 'object_detect')
     controllerSub = rospy.get_param('~topic', 'joy')
     rospy.Subscriber(fixSub, NavSatFix, gpsPosCallback)
     rospy.Subscriber(gpsTravelSub, Twist, gpsTravelSubCallback)
-    rospy.Subscriber(objAvoidSub, Twist, objectAvoidSubCallback)
+    rospy.Subscriber(objDetectSub, Objects, objectDetectSubCallback)
     rospy.Subscriber(controllerSub, Joy, controllerSubCallback)
     timer = rospy.Timer(rospy.Duration(0.2), publisherCallback)
     start = time.perf_counter()

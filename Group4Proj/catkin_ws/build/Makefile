@@ -519,6 +519,32 @@ megamind_genlisp/fast:
 .PHONY : megamind_genlisp/fast
 
 #=============================================================================
+# Target rules for targets named _object_tracker_generate_messages_check_deps_Objects
+
+# Build rule for target.
+_object_tracker_generate_messages_check_deps_Objects: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _object_tracker_generate_messages_check_deps_Objects
+.PHONY : _object_tracker_generate_messages_check_deps_Objects
+
+# fast build rule for target.
+_object_tracker_generate_messages_check_deps_Objects/fast:
+	$(MAKE) -f object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/build.make object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/build
+.PHONY : _object_tracker_generate_messages_check_deps_Objects/fast
+
+#=============================================================================
+# Target rules for targets named object_tracker_generate_messages
+
+# Build rule for target.
+object_tracker_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 object_tracker_generate_messages
+.PHONY : object_tracker_generate_messages
+
+# fast build rule for target.
+object_tracker_generate_messages/fast:
+	$(MAKE) -f object_tracker/CMakeFiles/object_tracker_generate_messages.dir/build.make object_tracker/CMakeFiles/object_tracker_generate_messages.dir/build
+.PHONY : object_tracker_generate_messages/fast
+
+#=============================================================================
 # Target rules for targets named joy_node
 
 # Build rule for target.
@@ -2339,6 +2365,8 @@ help:
 	@echo "... megamind_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... megamind_genlisp"
+	@echo "... _object_tracker_generate_messages_check_deps_Objects"
+	@echo "... object_tracker_generate_messages"
 	@echo "... joy_node"
 	@echo "... clean_test_results_joy"
 	@echo "... _run_tests_joy_roslint_package"

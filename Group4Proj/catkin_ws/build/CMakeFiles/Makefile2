@@ -58,8 +58,10 @@ all: gps_travel/all
 all: gui/all
 all: joystick_drivers/joystick_drivers/all
 all: megamind/all
+all: object_tracker/all
 all: joystick_drivers/joy/all
 all: joystick_drivers/spacenav_node/all
+all: take_photo/all
 all: rosaria/all
 all: luxonis/depthai-ros/depthai_ros_msgs/all
 all: luxonis/depthai-ros/depthai_bridge/all
@@ -73,8 +75,10 @@ preinstall: gps_travel/preinstall
 preinstall: gui/preinstall
 preinstall: joystick_drivers/joystick_drivers/preinstall
 preinstall: megamind/preinstall
+preinstall: object_tracker/preinstall
 preinstall: joystick_drivers/joy/preinstall
 preinstall: joystick_drivers/spacenav_node/preinstall
+preinstall: take_photo/preinstall
 preinstall: rosaria/preinstall
 preinstall: luxonis/depthai-ros/depthai_ros_msgs/preinstall
 preinstall: luxonis/depthai-ros/depthai_bridge/preinstall
@@ -93,8 +97,10 @@ clean: gps_travel/clean
 clean: gui/clean
 clean: joystick_drivers/joystick_drivers/clean
 clean: megamind/clean
+clean: object_tracker/clean
 clean: joystick_drivers/joy/clean
 clean: joystick_drivers/spacenav_node/clean
+clean: take_photo/clean
 clean: rosaria/clean
 clean: luxonis/depthai-ros/depthai_ros_msgs/clean
 clean: luxonis/depthai-ros/depthai_bridge/clean
@@ -433,6 +439,25 @@ megamind/clean: megamind/CMakeFiles/megamind_genlisp.dir/clean
 .PHONY : megamind/clean
 
 #=============================================================================
+# Directory level rules for directory object_tracker
+
+# Recursive "all" directory target.
+object_tracker/all: object_tracker/CMakeFiles/object_tracker_generate_messages.dir/all
+
+.PHONY : object_tracker/all
+
+# Recursive "preinstall" directory target.
+object_tracker/preinstall:
+
+.PHONY : object_tracker/preinstall
+
+# Recursive "clean" directory target.
+object_tracker/clean: object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/clean
+object_tracker/clean: object_tracker/CMakeFiles/object_tracker_generate_messages.dir/clean
+
+.PHONY : object_tracker/clean
+
+#=============================================================================
 # Directory level rules for directory rosaria
 
 # Recursive "all" directory target.
@@ -495,6 +520,24 @@ rosaria/clean: rosaria/CMakeFiles/rosaria_gencfg.dir/clean
 rosaria/clean: rosaria/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/clean
 
 .PHONY : rosaria/clean
+
+#=============================================================================
+# Directory level rules for directory take_photo
+
+# Recursive "all" directory target.
+take_photo/all:
+
+.PHONY : take_photo/all
+
+# Recursive "preinstall" directory target.
+take_photo/preinstall:
+
+.PHONY : take_photo/preinstall
+
+# Recursive "clean" directory target.
+take_photo/clean:
+
+.PHONY : take_photo/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
@@ -1235,6 +1278,60 @@ megamind_genlisp: megamind/CMakeFiles/megamind_genlisp.dir/rule
 megamind/CMakeFiles/megamind_genlisp.dir/clean:
 	$(MAKE) -f megamind/CMakeFiles/megamind_genlisp.dir/build.make megamind/CMakeFiles/megamind_genlisp.dir/clean
 .PHONY : megamind/CMakeFiles/megamind_genlisp.dir/clean
+
+#=============================================================================
+# Target rules for target object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir
+
+# All Build rule for target.
+object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/all:
+	$(MAKE) -f object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/build.make object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/depend
+	$(MAKE) -f object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/build.make object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num= "Built target _object_tracker_generate_messages_check_deps_Objects"
+.PHONY : object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/all
+
+# Build rule for subdir invocation for target.
+object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles 0
+.PHONY : object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/rule
+
+# Convenience name for target.
+_object_tracker_generate_messages_check_deps_Objects: object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/rule
+
+.PHONY : _object_tracker_generate_messages_check_deps_Objects
+
+# clean rule for target.
+object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/clean:
+	$(MAKE) -f object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/build.make object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/clean
+.PHONY : object_tracker/CMakeFiles/_object_tracker_generate_messages_check_deps_Objects.dir/clean
+
+#=============================================================================
+# Target rules for target object_tracker/CMakeFiles/object_tracker_generate_messages.dir
+
+# All Build rule for target.
+object_tracker/CMakeFiles/object_tracker_generate_messages.dir/all:
+	$(MAKE) -f object_tracker/CMakeFiles/object_tracker_generate_messages.dir/build.make object_tracker/CMakeFiles/object_tracker_generate_messages.dir/depend
+	$(MAKE) -f object_tracker/CMakeFiles/object_tracker_generate_messages.dir/build.make object_tracker/CMakeFiles/object_tracker_generate_messages.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles --progress-num= "Built target object_tracker_generate_messages"
+.PHONY : object_tracker/CMakeFiles/object_tracker_generate_messages.dir/all
+
+# Build rule for subdir invocation for target.
+object_tracker/CMakeFiles/object_tracker_generate_messages.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 object_tracker/CMakeFiles/object_tracker_generate_messages.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/netipc/Desktop/Group4Proj/catkin_ws/build/CMakeFiles 0
+.PHONY : object_tracker/CMakeFiles/object_tracker_generate_messages.dir/rule
+
+# Convenience name for target.
+object_tracker_generate_messages: object_tracker/CMakeFiles/object_tracker_generate_messages.dir/rule
+
+.PHONY : object_tracker_generate_messages
+
+# clean rule for target.
+object_tracker/CMakeFiles/object_tracker_generate_messages.dir/clean:
+	$(MAKE) -f object_tracker/CMakeFiles/object_tracker_generate_messages.dir/build.make object_tracker/CMakeFiles/object_tracker_generate_messages.dir/clean
+.PHONY : object_tracker/CMakeFiles/object_tracker_generate_messages.dir/clean
 
 #=============================================================================
 # Target rules for target joystick_drivers/joy/CMakeFiles/joy_node.dir

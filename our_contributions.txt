@@ -4,12 +4,21 @@ Code that written exclusively by us is found at the following paths and is attat
 - AUTO4508-Project\Group4Proj\catkin_ws\src\megamind\scripts\MegaMind.py
 - AUTO4508-Project\Group4Proj\catkin_ws\src\megamind\msg\Decision.msg
 - AUTO4508-Project\Group4Proj\catkin_ws\src\gps_travel\scripts\GPSTravel.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\take_photo\scripts\TakePhoto.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\take_photo\scripts\ImagePublisher.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\object_tracker\scripts\ObjectTracker.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\object_tracker\msg\Objects.msg
+- AUTO4508-Project\Group4Proj\catkin_ws\src\gui\scripts\GUI.py
 - AUTO4508-Project\Group4Proj\catkin_ws\group4.launch
 
 Code editted by us:
 - AUTO4508-Project\Group4Proj\catkin_ws\src\megamind\CMakeLists.txt
 - AUTO4508-Project\Group4Proj\catkin_ws\src\megamind\package.xml
 - AUTO4508-Project\Group4Proj\catkin_ws\src\gps_travel\CMakeLists.txt
+- AUTO4508-Project\Group4Proj\catkin_ws\src\take_photo\CMakeLists.txt
+- AUTO4508-Project\Group4Proj\catkin_ws\src\object_tracker\CMakeLists.txt
+- AUTO4508-Project\Group4Proj\catkin_ws\src\object_tracker\package.xml
+- AUTO4508-Project\Group4Proj\catkin_ws\src\gui\CMakeLists.txt
 
 Submodules imported from other gits:
 - AUTO4508-Project\Group4Proj\catkin_ws\src\rosaria
