@@ -4,8 +4,8 @@ messages_str = "/home/netipc/Desktop/Group4Proj/catkin_ws/src/object_tracker/msg
 services_str = ""
 pkg_name = "object_tracker"
 dependencies_str = "std_msgs"
-langs = ""
+langs = "gencpp;geneus;genlisp;gennodejs;genpy"
 dep_include_paths_str = "object_tracker;/home/netipc/Desktop/Group4Proj/catkin_ws/src/object_tracker/msg;std_msgs;/opt/ros/noetic/share/std_msgs/cmake/../msg"
 PYTHON_EXECUTABLE = "/usr/bin/python3"
 package_has_static_sources = '' == 'TRUE'
-genmsg_check_deps_script = ""
+genmsg_check_deps_script = "/opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py"

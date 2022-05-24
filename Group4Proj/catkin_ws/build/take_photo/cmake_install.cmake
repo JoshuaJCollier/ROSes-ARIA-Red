@@ -52,3 +52,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/take_photo" TYPE FILE FILES "/home/netipc/Desktop/Group4Proj/catkin_ws/src/take_photo/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/take_photo" TYPE PROGRAM FILES "/home/netipc/Desktop/Group4Proj/catkin_ws/build/take_photo/catkin_generated/installspace/image_publisher.py")
+endif()
+

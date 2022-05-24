@@ -70,7 +70,7 @@ def publisherCallback(event):
         # (31.98109143766833-31.98052883658287)/62 ~= 0.00001, which is the difference between
         # two GPS coordinates 62 meters away, thus 0.00001 is equivilent to 1m, below 2m distance
         # is used as the distance from the goal
-        elif (dist > 0.00002):
+        elif (dist > 0.00005):
             msg.linear.x = 0.5
         # Make this the else
         else:

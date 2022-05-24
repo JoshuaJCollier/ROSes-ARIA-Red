@@ -1,6 +1,6 @@
 <launch>
   
-  <node name="rviz" pkg="rviz" type="rviz">
+  <node name="rviz" pkg="rviz" type="rviz" args="-d ~/Desktop/Group4Proj/catkin_ws/src/gui/group4config.rviz">
   </node>
 
   <node name="RosAria" pkg="rosaria" type="RosAria">

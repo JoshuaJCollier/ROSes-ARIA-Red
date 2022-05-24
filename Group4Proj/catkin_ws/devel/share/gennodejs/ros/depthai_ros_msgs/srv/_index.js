@@ -1,10 +1,10 @@
 
 "use strict";
 
-let NormalizedImageCrop = require('./NormalizedImageCrop.js')
 let TriggerNamed = require('./TriggerNamed.js')
+let NormalizedImageCrop = require('./NormalizedImageCrop.js')
 
 module.exports = {
-  NormalizedImageCrop: NormalizedImageCrop,
   TriggerNamed: TriggerNamed,
+  NormalizedImageCrop: NormalizedImageCrop,
 };

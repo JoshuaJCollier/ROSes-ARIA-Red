@@ -1,0 +1,5 @@
+<launch>
+
+<node name="webcam" pkg="take_photo" type="image_publisher.py" output="screen" respawn="true"/>
+
+</launch>

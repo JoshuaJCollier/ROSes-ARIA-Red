@@ -7,7 +7,7 @@ import math
 # Predefined message data
 from geometry_msgs.msg import Twist
 from megamind.msg import Decision
-from object_detect.msg import Objects
+from object_tracker.msg import Objects
 from sensor_msgs.msg import NavSatFix, Joy
 
 currentGPSPos = (0, 0)

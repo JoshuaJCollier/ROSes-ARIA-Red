@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(object_tracker_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT " " STREQUAL " ")
+if(NOT "include " STREQUAL " ")
   set(object_tracker_INCLUDE_DIRS "")
-  set(_include_dirs "")
+  set(_include_dirs "include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/netipc/Desktop/Group4Proj/catkin_ws/install/lib;/home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib;/home/netipc/catkin_ws/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/netipc/Desktop/Group4Proj/catkin_ws/install/lib;/home/netipc/Desktop/Group4Proj/catkin_ws/devel/lib;/home/netipc/ins_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(object_tracker_EXPORTED_TARGETS "")
+set(object_tracker_EXPORTED_TARGETS "object_tracker_generate_messages_cpp;object_tracker_generate_messages_eus;object_tracker_generate_messages_lisp;object_tracker_generate_messages_nodejs;object_tracker_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${object_tracker_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
