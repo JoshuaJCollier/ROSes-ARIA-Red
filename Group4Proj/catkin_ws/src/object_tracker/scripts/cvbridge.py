@@ -118,8 +118,10 @@ class image_converter:
                     cv2.putText(cv_image, text= "cone", org=(xc+20,yc+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
-                    tracker.coneX = wc
-                    tracker.coneY = hc
+                    tracker.coneX = xc
+                    tracker.coneY = 2000-yc
+                    tracker.coneW = wc
+                    tracker.coneH = hc
                     tracker.coneDist = 30/math.sqrt(hc)
                     tracker.cone = 1
                     
@@ -132,13 +134,14 @@ class image_converter:
                     cv2.putText(cv_image, text= "bucket", org=(xc+20,yc+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
-
-                    tracker.bucketX = wc
-                    tracker.bucketY = hc
+                    tracker.bucketX = xc
+                    tracker.bucketY = 2000-yc
+                    tracker.bucketW = wc
+                    tracker.bucketH = hc
                     tracker.bucketDist = 90/math.sqrt(hc)
                     tracker.bucket = 1
                     
-                    cv2.putText(cv_image, text= '{:.2f}m'.format(tracker.bucketDist), org=(xo+20,yo+60),
+                    cv2.putText(cv_image, text= '{:.2f}m'.format(tracker.bucketDist), org=(xo+20,yo+70),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
 
@@ -152,9 +155,10 @@ class image_converter:
                     cv2.putText(cv_image, text= "cone", org=(xb+20,yb+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
-
-                    tracker.coneX = wb
-                    tracker.coneY = hb
+                    tracker.coneX = xb
+                    tracker.coneY = 2000-yb
+                    tracker.coneW = wb
+                    tracker.coneH = hb
                     tracker.coneDist = 30/math.sqrt(hb)
                     tracker.cone = 1
                     
@@ -167,13 +171,14 @@ class image_converter:
                     cv2.putText(cv_image, text= "bucket", org=(xb+20,yb+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
-
-                    tracker.bucketX = wb
-                    tracker.bucketY = hb
+                    tracker.bucketX = xb
+                    tracker.bucketY = 2000-yb
+                    tracker.bucketW = wb
+                    tracker.bucketH = hb
                     tracker.bucketDist = 90/math.sqrt(hb)
                     tracker.bucket = 1
                     
-                    cv2.putText(cv_image, text= '{:.2f}m'.format(tracker.bucketDist), org=(xo+20,yo+60),
+                    cv2.putText(cv_image, text= '{:.2f}m'.format(tracker.bucketDist), org=(xo+20,yo+70),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
 
@@ -190,13 +195,14 @@ class image_converter:
                     cv2.putText(cv_image, text= "object", org=(xo+20,yo+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
-                    
-                    tracker.objectX = wo
-                    tracker.objectY = ho
+                    tracker.objectX = xo
+                    tracker.objectY = 2000-yo
+                    tracker.objectW = wo
+                    tracker.objectH = ho
                     tracker.objectDist = 30/math.sqrt(ho)
                     tracker.object = 1
                     
-                    cv2.putText(cv_image, text= '{:.2f}m'.format(tracker.objectDist), org=(xo+20,yo+60),
+                    cv2.putText(cv_image, text= '{:.2f}m'.format(tracker.objectDist), org=(xo+20,yo+70),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
                     
