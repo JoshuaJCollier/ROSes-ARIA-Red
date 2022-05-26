@@ -65,8 +65,8 @@ class image_converter:
             upper_boundb = np.array([4, 255, 255])
 
             # blue object 
-            lower_boundo = np.array([100, 0, 0])     
-            upper_boundo = np.array([112, 255, 100])
+            lower_boundo = np.array([107, 20, 40])
+            upper_boundo = np.array([108, 255, 100])
 
             # find the colors within the boundaries
             maskc = cv2.inRange(hsv, lower_boundc, upper_boundc)
