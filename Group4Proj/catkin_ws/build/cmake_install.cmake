@@ -140,9 +140,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/joystick_drivers/spacenav_node/cmake_install.cmake")
   include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/take_photo/cmake_install.cmake")
   include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/rosaria/cmake_install.cmake")
-  include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/luxonis/depthai-ros/depthai_ros_msgs/cmake_install.cmake")
-  include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/luxonis/depthai-ros/depthai_bridge/cmake_install.cmake")
-  include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/luxonis/depthai-ros-examples/depthai_examples/cmake_install.cmake")
+  include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/depthai-ros/depthai_ros_msgs/cmake_install.cmake")
+  include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/depthai-ros/depthai_bridge/cmake_install.cmake")
+  include("/home/netipc/Desktop/Group4Proj/catkin_ws/build/depthai_examples/cmake_install.cmake")
 
 endif()
 

@@ -8,17 +8,22 @@ import struct
 
 
 class Objects(genpy.Message):
-  _md5sum = "57c2ce73fa9cbfd6f321f8c8cacc21d6"
+  _md5sum = "c409bb10f65ba63532d5faef2c6ec1be"
   _type = "object_tracker/Objects"
   _has_header = False  # flag to mark the presence of a Header object
-  _full_text = """int32 cone
-int32 bucket
-int32 obstacle
+  _full_text = """int64 cone
+int64 bucket
+int64 obstacle
+float64 coneDist
 float64 bucketDist
+float64 obstacleDist
+float64 coneSize
+float64 bucketSize
+float64 obstacleSize
 float64 time
 """
-  __slots__ = ['cone','bucket','obstacle','bucketDist','time']
-  _slot_types = ['int32','int32','int32','float64','float64']
+  __slots__ = ['cone','bucket','obstacle','coneDist','bucketDist','obstacleDist','coneSize','bucketSize','obstacleSize','time']
+  _slot_types = ['int64','int64','int64','float64','float64','float64','float64','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -28,7 +33,7 @@ float64 time
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       cone,bucket,obstacle,bucketDist,time
+       cone,bucket,obstacle,coneDist,bucketDist,obstacleDist,coneSize,bucketSize,obstacleSize,time
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -43,15 +48,30 @@ float64 time
         self.bucket = 0
       if self.obstacle is None:
         self.obstacle = 0
+      if self.coneDist is None:
+        self.coneDist = 0.
       if self.bucketDist is None:
         self.bucketDist = 0.
+      if self.obstacleDist is None:
+        self.obstacleDist = 0.
+      if self.coneSize is None:
+        self.coneSize = 0.
+      if self.bucketSize is None:
+        self.bucketSize = 0.
+      if self.obstacleSize is None:
+        self.obstacleSize = 0.
       if self.time is None:
         self.time = 0.
     else:
       self.cone = 0
       self.bucket = 0
       self.obstacle = 0
+      self.coneDist = 0.
       self.bucketDist = 0.
+      self.obstacleDist = 0.
+      self.coneSize = 0.
+      self.bucketSize = 0.
+      self.obstacleSize = 0.
       self.time = 0.
 
   def _get_types(self):
@@ -67,7 +87,7 @@ float64 time
     """
     try:
       _x = self
-      buff.write(_get_struct_3i2d().pack(_x.cone, _x.bucket, _x.obstacle, _x.bucketDist, _x.time))
+      buff.write(_get_struct_3q7d().pack(_x.cone, _x.bucket, _x.obstacle, _x.coneDist, _x.bucketDist, _x.obstacleDist, _x.coneSize, _x.bucketSize, _x.obstacleSize, _x.time))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -82,8 +102,8 @@ float64 time
       end = 0
       _x = self
       start = end
-      end += 28
-      (_x.cone, _x.bucket, _x.obstacle, _x.bucketDist, _x.time,) = _get_struct_3i2d().unpack(str[start:end])
+      end += 80
+      (_x.cone, _x.bucket, _x.obstacle, _x.coneDist, _x.bucketDist, _x.obstacleDist, _x.coneSize, _x.bucketSize, _x.obstacleSize, _x.time,) = _get_struct_3q7d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -97,7 +117,7 @@ float64 time
     """
     try:
       _x = self
-      buff.write(_get_struct_3i2d().pack(_x.cone, _x.bucket, _x.obstacle, _x.bucketDist, _x.time))
+      buff.write(_get_struct_3q7d().pack(_x.cone, _x.bucket, _x.obstacle, _x.coneDist, _x.bucketDist, _x.obstacleDist, _x.coneSize, _x.bucketSize, _x.obstacleSize, _x.time))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -113,8 +133,8 @@ float64 time
       end = 0
       _x = self
       start = end
-      end += 28
-      (_x.cone, _x.bucket, _x.obstacle, _x.bucketDist, _x.time,) = _get_struct_3i2d().unpack(str[start:end])
+      end += 80
+      (_x.cone, _x.bucket, _x.obstacle, _x.coneDist, _x.bucketDist, _x.obstacleDist, _x.coneSize, _x.bucketSize, _x.obstacleSize, _x.time,) = _get_struct_3q7d().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e)  # most likely buffer underfill
@@ -123,9 +143,9 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3i2d = None
-def _get_struct_3i2d():
-    global _struct_3i2d
-    if _struct_3i2d is None:
-        _struct_3i2d = struct.Struct("<3i2d")
-    return _struct_3i2d
+_struct_3q7d = None
+def _get_struct_3q7d():
+    global _struct_3q7d
+    if _struct_3q7d is None:
+        _struct_3q7d = struct.Struct("<3q7d")
+    return _struct_3q7d

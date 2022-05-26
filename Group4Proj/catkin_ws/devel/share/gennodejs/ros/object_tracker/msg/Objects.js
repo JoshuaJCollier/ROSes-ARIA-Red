@@ -21,7 +21,12 @@ class Objects {
       this.cone = null;
       this.bucket = null;
       this.obstacle = null;
+      this.coneDist = null;
       this.bucketDist = null;
+      this.obstacleDist = null;
+      this.coneSize = null;
+      this.bucketSize = null;
+      this.obstacleSize = null;
       this.time = null;
     }
     else {
@@ -43,11 +48,41 @@ class Objects {
       else {
         this.obstacle = 0;
       }
+      if (initObj.hasOwnProperty('coneDist')) {
+        this.coneDist = initObj.coneDist
+      }
+      else {
+        this.coneDist = 0.0;
+      }
       if (initObj.hasOwnProperty('bucketDist')) {
         this.bucketDist = initObj.bucketDist
       }
       else {
         this.bucketDist = 0.0;
+      }
+      if (initObj.hasOwnProperty('obstacleDist')) {
+        this.obstacleDist = initObj.obstacleDist
+      }
+      else {
+        this.obstacleDist = 0.0;
+      }
+      if (initObj.hasOwnProperty('coneSize')) {
+        this.coneSize = initObj.coneSize
+      }
+      else {
+        this.coneSize = 0.0;
+      }
+      if (initObj.hasOwnProperty('bucketSize')) {
+        this.bucketSize = initObj.bucketSize
+      }
+      else {
+        this.bucketSize = 0.0;
+      }
+      if (initObj.hasOwnProperty('obstacleSize')) {
+        this.obstacleSize = initObj.obstacleSize
+      }
+      else {
+        this.obstacleSize = 0.0;
       }
       if (initObj.hasOwnProperty('time')) {
         this.time = initObj.time
@@ -61,13 +96,23 @@ class Objects {
   static serialize(obj, buffer, bufferOffset) {
     // Serializes a message object of type Objects
     // Serialize message field [cone]
-    bufferOffset = _serializer.int32(obj.cone, buffer, bufferOffset);
+    bufferOffset = _serializer.int64(obj.cone, buffer, bufferOffset);
     // Serialize message field [bucket]
-    bufferOffset = _serializer.int32(obj.bucket, buffer, bufferOffset);
+    bufferOffset = _serializer.int64(obj.bucket, buffer, bufferOffset);
     // Serialize message field [obstacle]
-    bufferOffset = _serializer.int32(obj.obstacle, buffer, bufferOffset);
+    bufferOffset = _serializer.int64(obj.obstacle, buffer, bufferOffset);
+    // Serialize message field [coneDist]
+    bufferOffset = _serializer.float64(obj.coneDist, buffer, bufferOffset);
     // Serialize message field [bucketDist]
     bufferOffset = _serializer.float64(obj.bucketDist, buffer, bufferOffset);
+    // Serialize message field [obstacleDist]
+    bufferOffset = _serializer.float64(obj.obstacleDist, buffer, bufferOffset);
+    // Serialize message field [coneSize]
+    bufferOffset = _serializer.float64(obj.coneSize, buffer, bufferOffset);
+    // Serialize message field [bucketSize]
+    bufferOffset = _serializer.float64(obj.bucketSize, buffer, bufferOffset);
+    // Serialize message field [obstacleSize]
+    bufferOffset = _serializer.float64(obj.obstacleSize, buffer, bufferOffset);
     // Serialize message field [time]
     bufferOffset = _serializer.float64(obj.time, buffer, bufferOffset);
     return bufferOffset;
@@ -78,20 +123,30 @@ class Objects {
     let len;
     let data = new Objects(null);
     // Deserialize message field [cone]
-    data.cone = _deserializer.int32(buffer, bufferOffset);
+    data.cone = _deserializer.int64(buffer, bufferOffset);
     // Deserialize message field [bucket]
-    data.bucket = _deserializer.int32(buffer, bufferOffset);
+    data.bucket = _deserializer.int64(buffer, bufferOffset);
     // Deserialize message field [obstacle]
-    data.obstacle = _deserializer.int32(buffer, bufferOffset);
+    data.obstacle = _deserializer.int64(buffer, bufferOffset);
+    // Deserialize message field [coneDist]
+    data.coneDist = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [bucketDist]
     data.bucketDist = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [obstacleDist]
+    data.obstacleDist = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [coneSize]
+    data.coneSize = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [bucketSize]
+    data.bucketSize = _deserializer.float64(buffer, bufferOffset);
+    // Deserialize message field [obstacleSize]
+    data.obstacleSize = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [time]
     data.time = _deserializer.float64(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
-    return 28;
+    return 80;
   }
 
   static datatype() {
@@ -101,16 +156,21 @@ class Objects {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '57c2ce73fa9cbfd6f321f8c8cacc21d6';
+    return 'c409bb10f65ba63532d5faef2c6ec1be';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
-    int32 cone
-    int32 bucket
-    int32 obstacle
+    int64 cone
+    int64 bucket
+    int64 obstacle
+    float64 coneDist
     float64 bucketDist
+    float64 obstacleDist
+    float64 coneSize
+    float64 bucketSize
+    float64 obstacleSize
     float64 time
     
     `;
@@ -143,11 +203,46 @@ class Objects {
       resolved.obstacle = 0
     }
 
+    if (msg.coneDist !== undefined) {
+      resolved.coneDist = msg.coneDist;
+    }
+    else {
+      resolved.coneDist = 0.0
+    }
+
     if (msg.bucketDist !== undefined) {
       resolved.bucketDist = msg.bucketDist;
     }
     else {
       resolved.bucketDist = 0.0
+    }
+
+    if (msg.obstacleDist !== undefined) {
+      resolved.obstacleDist = msg.obstacleDist;
+    }
+    else {
+      resolved.obstacleDist = 0.0
+    }
+
+    if (msg.coneSize !== undefined) {
+      resolved.coneSize = msg.coneSize;
+    }
+    else {
+      resolved.coneSize = 0.0
+    }
+
+    if (msg.bucketSize !== undefined) {
+      resolved.bucketSize = msg.bucketSize;
+    }
+    else {
+      resolved.bucketSize = 0.0
+    }
+
+    if (msg.obstacleSize !== undefined) {
+      resolved.obstacleSize = msg.obstacleSize;
+    }
+    else {
+      resolved.obstacleSize = 0.0
     }
 
     if (msg.time !== undefined) {

@@ -1841,7 +1841,7 @@ _depthai_ros_msgs_generate_messages_check_deps_NormalizedImageCrop: cmake_check_
 
 # fast build rule for target.
 _depthai_ros_msgs_generate_messages_check_deps_NormalizedImageCrop/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_NormalizedImageCrop.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_NormalizedImageCrop.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_NormalizedImageCrop.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_NormalizedImageCrop.dir/build
 .PHONY : _depthai_ros_msgs_generate_messages_check_deps_NormalizedImageCrop/fast
 
 #=============================================================================
@@ -1854,7 +1854,7 @@ _depthai_ros_msgs_generate_messages_check_deps_HandLandmark: cmake_check_build_s
 
 # fast build rule for target.
 _depthai_ros_msgs_generate_messages_check_deps_HandLandmark/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_HandLandmark.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_HandLandmark.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_HandLandmark.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_HandLandmark.dir/build
 .PHONY : _depthai_ros_msgs_generate_messages_check_deps_HandLandmark/fast
 
 #=============================================================================
@@ -1867,7 +1867,7 @@ depthai_ros_msgs_gennodejs: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_gennodejs/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_gennodejs.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_gennodejs.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_gennodejs.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_gennodejs.dir/build
 .PHONY : depthai_ros_msgs_gennodejs/fast
 
 #=============================================================================
@@ -1880,7 +1880,7 @@ depthai_ros_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_generate_messages_py/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_py.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_py.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_py.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_py.dir/build
 .PHONY : depthai_ros_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -1893,7 +1893,7 @@ _depthai_ros_msgs_generate_messages_check_deps_SpatialDetection: cmake_check_bui
 
 # fast build rule for target.
 _depthai_ros_msgs_generate_messages_check_deps_SpatialDetection/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_SpatialDetection.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_SpatialDetection.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_SpatialDetection.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_SpatialDetection.dir/build
 .PHONY : _depthai_ros_msgs_generate_messages_check_deps_SpatialDetection/fast
 
 #=============================================================================
@@ -1906,7 +1906,7 @@ depthai_ros_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_nodejs.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_nodejs.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_nodejs.dir/build
 .PHONY : depthai_ros_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -1919,7 +1919,7 @@ _depthai_ros_msgs_generate_messages_check_deps_HandLandmarkArray: cmake_check_bu
 
 # fast build rule for target.
 _depthai_ros_msgs_generate_messages_check_deps_HandLandmarkArray/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_HandLandmarkArray.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_HandLandmarkArray.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_HandLandmarkArray.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_HandLandmarkArray.dir/build
 .PHONY : _depthai_ros_msgs_generate_messages_check_deps_HandLandmarkArray/fast
 
 #=============================================================================
@@ -1932,7 +1932,7 @@ depthai_ros_msgs_generate_messages: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_generate_messages/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages.dir/build
 .PHONY : depthai_ros_msgs_generate_messages/fast
 
 #=============================================================================
@@ -1945,7 +1945,7 @@ vision_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 vision_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_nodejs.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_nodejs.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_nodejs.dir/build
 .PHONY : vision_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -1958,7 +1958,7 @@ vision_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 vision_msgs_generate_messages_py/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_py.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_py.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_py.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_py.dir/build
 .PHONY : vision_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -1971,7 +1971,7 @@ depthai_ros_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_generate_messages_eus/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_eus.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_eus.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_eus.dir/build
 .PHONY : depthai_ros_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -1984,7 +1984,7 @@ _depthai_ros_msgs_generate_messages_check_deps_TriggerNamed: cmake_check_build_s
 
 # fast build rule for target.
 _depthai_ros_msgs_generate_messages_check_deps_TriggerNamed/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_TriggerNamed.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_TriggerNamed.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_TriggerNamed.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_TriggerNamed.dir/build
 .PHONY : _depthai_ros_msgs_generate_messages_check_deps_TriggerNamed/fast
 
 #=============================================================================
@@ -1997,7 +1997,7 @@ _depthai_ros_msgs_generate_messages_check_deps_AutoFocusCtrl: cmake_check_build_
 
 # fast build rule for target.
 _depthai_ros_msgs_generate_messages_check_deps_AutoFocusCtrl/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_AutoFocusCtrl.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_AutoFocusCtrl.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_AutoFocusCtrl.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_AutoFocusCtrl.dir/build
 .PHONY : _depthai_ros_msgs_generate_messages_check_deps_AutoFocusCtrl/fast
 
 #=============================================================================
@@ -2010,7 +2010,7 @@ vision_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 vision_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_lisp.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_lisp.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_lisp.dir/build
 .PHONY : vision_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -2023,7 +2023,7 @@ vision_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 vision_msgs_generate_messages_eus/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_eus.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_eus.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_eus.dir/build
 .PHONY : vision_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -2036,7 +2036,7 @@ _depthai_ros_msgs_generate_messages_check_deps_SpatialDetectionArray: cmake_chec
 
 # fast build rule for target.
 _depthai_ros_msgs_generate_messages_check_deps_SpatialDetectionArray/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_SpatialDetectionArray.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_SpatialDetectionArray.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_SpatialDetectionArray.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/_depthai_ros_msgs_generate_messages_check_deps_SpatialDetectionArray.dir/build
 .PHONY : _depthai_ros_msgs_generate_messages_check_deps_SpatialDetectionArray/fast
 
 #=============================================================================
@@ -2049,7 +2049,7 @@ depthai_ros_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_cpp.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_cpp.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_cpp.dir/build
 .PHONY : depthai_ros_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2062,7 +2062,7 @@ depthai_ros_msgs_geneus: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_geneus/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_geneus.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_geneus.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_geneus.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_geneus.dir/build
 .PHONY : depthai_ros_msgs_geneus/fast
 
 #=============================================================================
@@ -2075,7 +2075,7 @@ depthai_ros_msgs_gencpp: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_gencpp/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_gencpp.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_gencpp.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_gencpp.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_gencpp.dir/build
 .PHONY : depthai_ros_msgs_gencpp/fast
 
 #=============================================================================
@@ -2088,7 +2088,7 @@ depthai_ros_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_lisp.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_lisp.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_generate_messages_lisp.dir/build
 .PHONY : depthai_ros_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -2101,7 +2101,7 @@ depthai_ros_msgs_genpy: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_genpy/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_genpy.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_genpy.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_genpy.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_genpy.dir/build
 .PHONY : depthai_ros_msgs_genpy/fast
 
 #=============================================================================
@@ -2114,7 +2114,7 @@ vision_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 vision_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_cpp.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_cpp.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/vision_msgs_generate_messages_cpp.dir/build
 .PHONY : vision_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2127,7 +2127,7 @@ depthai_ros_msgs_genlisp: cmake_check_build_system
 
 # fast build rule for target.
 depthai_ros_msgs_genlisp/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_genlisp.dir/build.make luxonis/depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_genlisp.dir/build
+	$(MAKE) -f depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_genlisp.dir/build.make depthai-ros/depthai_ros_msgs/CMakeFiles/depthai_ros_msgs_genlisp.dir/build
 .PHONY : depthai_ros_msgs_genlisp/fast
 
 #=============================================================================
@@ -2140,7 +2140,7 @@ depthai_bridge: cmake_check_build_system
 
 # fast build rule for target.
 depthai_bridge/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_bridge/CMakeFiles/depthai_bridge.dir/build.make luxonis/depthai-ros/depthai_bridge/CMakeFiles/depthai_bridge.dir/build
+	$(MAKE) -f depthai-ros/depthai_bridge/CMakeFiles/depthai_bridge.dir/build.make depthai-ros/depthai_bridge/CMakeFiles/depthai_bridge.dir/build
 .PHONY : depthai_bridge/fast
 
 #=============================================================================
@@ -2153,7 +2153,7 @@ stereo_msgs_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 stereo_msgs_generate_messages_nodejs/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_nodejs.dir/build.make luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_nodejs.dir/build
+	$(MAKE) -f depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_nodejs.dir/build.make depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_nodejs.dir/build
 .PHONY : stereo_msgs_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -2166,7 +2166,7 @@ stereo_msgs_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 stereo_msgs_generate_messages_lisp/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_lisp.dir/build.make luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_lisp.dir/build
+	$(MAKE) -f depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_lisp.dir/build.make depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_lisp.dir/build
 .PHONY : stereo_msgs_generate_messages_lisp/fast
 
 #=============================================================================
@@ -2179,7 +2179,7 @@ stereo_msgs_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 stereo_msgs_generate_messages_py/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_py.dir/build.make luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_py.dir/build
+	$(MAKE) -f depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_py.dir/build.make depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_py.dir/build
 .PHONY : stereo_msgs_generate_messages_py/fast
 
 #=============================================================================
@@ -2192,7 +2192,7 @@ stereo_msgs_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 stereo_msgs_generate_messages_eus/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_eus.dir/build.make luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_eus.dir/build
+	$(MAKE) -f depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_eus.dir/build.make depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_eus.dir/build
 .PHONY : stereo_msgs_generate_messages_eus/fast
 
 #=============================================================================
@@ -2205,7 +2205,7 @@ stereo_msgs_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 stereo_msgs_generate_messages_cpp/fast:
-	$(MAKE) -f luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_cpp.dir/build.make luxonis/depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_cpp.dir/build
+	$(MAKE) -f depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_cpp.dir/build.make depthai-ros/depthai_bridge/CMakeFiles/stereo_msgs_generate_messages_cpp.dir/build
 .PHONY : stereo_msgs_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2218,7 +2218,7 @@ stereo_node: cmake_check_build_system
 
 # fast build rule for target.
 stereo_node/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/stereo_node.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/stereo_node.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/stereo_node.dir/build.make depthai_examples/CMakeFiles/stereo_node.dir/build
 .PHONY : stereo_node/fast
 
 #=============================================================================
@@ -2231,7 +2231,7 @@ rgb_subscriber_node: cmake_check_build_system
 
 # fast build rule for target.
 rgb_subscriber_node/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/rgb_subscriber_node.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/rgb_subscriber_node.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/rgb_subscriber_node.dir/build.make depthai_examples/CMakeFiles/rgb_subscriber_node.dir/build
 .PHONY : rgb_subscriber_node/fast
 
 #=============================================================================
@@ -2244,7 +2244,7 @@ rgb_stereo_node: cmake_check_build_system
 
 # fast build rule for target.
 rgb_stereo_node/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/rgb_stereo_node.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/rgb_stereo_node.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/rgb_stereo_node.dir/build.make depthai_examples/CMakeFiles/rgb_stereo_node.dir/build
 .PHONY : rgb_stereo_node/fast
 
 #=============================================================================
@@ -2257,7 +2257,7 @@ nodelet_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 nodelet_generate_messages_cpp/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_cpp.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make depthai_examples/CMakeFiles/nodelet_generate_messages_cpp.dir/build
 .PHONY : nodelet_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2270,7 +2270,7 @@ rgb_node: cmake_check_build_system
 
 # fast build rule for target.
 rgb_node/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/rgb_node.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/rgb_node.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/rgb_node.dir/build.make depthai_examples/CMakeFiles/rgb_node.dir/build
 .PHONY : rgb_node/fast
 
 #=============================================================================
@@ -2283,7 +2283,7 @@ nodelet_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 nodelet_generate_messages_nodejs/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make depthai_examples/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
 .PHONY : nodelet_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -2296,7 +2296,7 @@ yolov4_spatial_node: cmake_check_build_system
 
 # fast build rule for target.
 yolov4_spatial_node/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/yolov4_spatial_node.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/yolov4_spatial_node.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/yolov4_spatial_node.dir/build.make depthai_examples/CMakeFiles/yolov4_spatial_node.dir/build
 .PHONY : yolov4_spatial_node/fast
 
 #=============================================================================
@@ -2309,7 +2309,7 @@ bond_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 bond_generate_messages_py/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_py.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_py.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/bond_generate_messages_py.dir/build.make depthai_examples/CMakeFiles/bond_generate_messages_py.dir/build
 .PHONY : bond_generate_messages_py/fast
 
 #=============================================================================
@@ -2322,7 +2322,7 @@ nodelet_stereo: cmake_check_build_system
 
 # fast build rule for target.
 nodelet_stereo/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_stereo.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_stereo.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/nodelet_stereo.dir/build.make depthai_examples/CMakeFiles/nodelet_stereo.dir/build
 .PHONY : nodelet_stereo/fast
 
 #=============================================================================
@@ -2335,7 +2335,7 @@ stereo_inertial_node: cmake_check_build_system
 
 # fast build rule for target.
 stereo_inertial_node/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/stereo_inertial_node.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/stereo_inertial_node.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/stereo_inertial_node.dir/build.make depthai_examples/CMakeFiles/stereo_inertial_node.dir/build
 .PHONY : stereo_inertial_node/fast
 
 #=============================================================================
@@ -2348,7 +2348,7 @@ nodelet_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 nodelet_generate_messages_eus/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_eus.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_eus.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/nodelet_generate_messages_eus.dir/build.make depthai_examples/CMakeFiles/nodelet_generate_messages_eus.dir/build
 .PHONY : nodelet_generate_messages_eus/fast
 
 #=============================================================================
@@ -2361,7 +2361,7 @@ bond_generate_messages_nodejs: cmake_check_build_system
 
 # fast build rule for target.
 bond_generate_messages_nodejs/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_nodejs.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_nodejs.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/bond_generate_messages_nodejs.dir/build.make depthai_examples/CMakeFiles/bond_generate_messages_nodejs.dir/build
 .PHONY : bond_generate_messages_nodejs/fast
 
 #=============================================================================
@@ -2374,7 +2374,7 @@ nodelet_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 nodelet_generate_messages_lisp/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_lisp.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make depthai_examples/CMakeFiles/nodelet_generate_messages_lisp.dir/build
 .PHONY : nodelet_generate_messages_lisp/fast
 
 #=============================================================================
@@ -2387,7 +2387,7 @@ mobilenet_node: cmake_check_build_system
 
 # fast build rule for target.
 mobilenet_node/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/mobilenet_node.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/mobilenet_node.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/mobilenet_node.dir/build.make depthai_examples/CMakeFiles/mobilenet_node.dir/build
 .PHONY : mobilenet_node/fast
 
 #=============================================================================
@@ -2400,7 +2400,7 @@ bond_generate_messages_eus: cmake_check_build_system
 
 # fast build rule for target.
 bond_generate_messages_eus/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_eus.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_eus.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/bond_generate_messages_eus.dir/build.make depthai_examples/CMakeFiles/bond_generate_messages_eus.dir/build
 .PHONY : bond_generate_messages_eus/fast
 
 #=============================================================================
@@ -2413,7 +2413,7 @@ bond_generate_messages_cpp: cmake_check_build_system
 
 # fast build rule for target.
 bond_generate_messages_cpp/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_cpp.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_cpp.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/bond_generate_messages_cpp.dir/build.make depthai_examples/CMakeFiles/bond_generate_messages_cpp.dir/build
 .PHONY : bond_generate_messages_cpp/fast
 
 #=============================================================================
@@ -2426,7 +2426,7 @@ nodelet_generate_messages_py: cmake_check_build_system
 
 # fast build rule for target.
 nodelet_generate_messages_py/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_py.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/nodelet_generate_messages_py.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/nodelet_generate_messages_py.dir/build.make depthai_examples/CMakeFiles/nodelet_generate_messages_py.dir/build
 .PHONY : nodelet_generate_messages_py/fast
 
 #=============================================================================
@@ -2439,7 +2439,7 @@ bond_generate_messages_lisp: cmake_check_build_system
 
 # fast build rule for target.
 bond_generate_messages_lisp/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_lisp.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/bond_generate_messages_lisp.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/bond_generate_messages_lisp.dir/build.make depthai_examples/CMakeFiles/bond_generate_messages_lisp.dir/build
 .PHONY : bond_generate_messages_lisp/fast
 
 #=============================================================================
@@ -2452,7 +2452,7 @@ crop_control_service: cmake_check_build_system
 
 # fast build rule for target.
 crop_control_service/fast:
-	$(MAKE) -f luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/crop_control_service.dir/build.make luxonis/depthai-ros-examples/depthai_examples/CMakeFiles/crop_control_service.dir/build
+	$(MAKE) -f depthai_examples/CMakeFiles/crop_control_service.dir/build.make depthai_examples/CMakeFiles/crop_control_service.dir/build
 .PHONY : crop_control_service/fast
 
 # Help Target

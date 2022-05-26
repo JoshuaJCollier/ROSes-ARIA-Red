@@ -1,5 +1,10 @@
-int32 cone
-int32 bucket
-int32 obstacle
+int64 cone
+int64 bucket
+int64 obstacle
+float64 coneDist
 float64 bucketDist
+float64 obstacleDist
+float64 coneSize
+float64 bucketSize
+float64 obstacleSize
 float64 time

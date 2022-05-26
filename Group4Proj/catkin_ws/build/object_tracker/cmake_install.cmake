@@ -88,3 +88,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/object_tracker" TYPE FILE FILES "/home/netipc/Desktop/Group4Proj/catkin_ws/src/object_tracker/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/object_tracker" TYPE PROGRAM FILES "/home/netipc/Desktop/Group4Proj/catkin_ws/build/object_tracker/catkin_generated/installspace/cvbridge.py")
+endif()
+
