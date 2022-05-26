@@ -1,21 +1,54 @@
 # AUTO4508-Project Group 4
 Github repo for code compilation to operate Pioneer Robot. Below are instructions for connecting to the bot and installing nodes, as well as compiling and running.
 
+To Start Code:
+- Download Group4Proj code onto robot
+- "cd /path/to/catkin_ws" 
+- "find ./ -type f -exec touch {} +" in terminal
+- "catkin_make" in terminal
+- "roslaunch group4.launch" to run
+
 Tasks to Complete:
 1. ~~Drive the robot along a path, specified through a number of given GPS waypoints. The robot has to visit each waypoint before returning to its starting position.~~
-2. Each waypoint is marked by a cone. Whenever a waypoint has been reached (with reasonable accuracy), the robot must take a photo of the cone and head towards the next waypoint.
-3. At each waypoint, a bucket will be in the vicinity. Identify it and take a picture and record its distance.
+2. ~~Each waypoint is marked by a cone. Whenever a waypoint has been reached (with reasonable accuracy), the robot must take a photo of the cone and head towards the next waypoint.~~
+3. ~~At each waypoint, a bucket will be in the vicinity. Identify it and take a picture and record its distance.~~
 4. After finishing the course, print cone and bucket pictures and bucket distances to screen.
-5. Record the path and display it graphically.
-6. Implement UI with graphic and ~~text to display internal state and intended actions~~ (print mindState and explain what it does).
+5. ~~Record the path and display it graphically.~~
+6. ~~Implement UI with graphic and text to display internal state and intended actions (print mindState and explain what it does).~~
 7. ~~Avoid collision with cones and obstacles including moving and stationary.~~
 8. ~~For safety reasons, implement bluetooth with auto and manual~~
 
-For me to copy code from the bot to my computer, if you want to get a copy change the second directory to somewhere on your computer
-```
-scp -r * netipc@192.168.2.156:~/Desktop/Group4Proj "C:\Users\josh\OneDrive - The University of Western Australia\UWA\Postgrad\UWA Year 5 - Masters\Y5S1\AUTO4508 - Mobile Robots\CODE_ON_BOT\Group4Proj" 
-```
+#
+Code that written exclusively by us is found at the following paths and is attatched in a seperate file:
+- AUTO4508-Project\Group4Proj\catkin_ws\src\megamind\scripts\MegaMind.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\megamind\msg\Decision.msg
+- AUTO4508-Project\Group4Proj\catkin_ws\src\gps_travel\scripts\GPSTravel.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\take_photo\scripts\TakePhoto.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\take_photo\scripts\ImagePublisher.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\object_tracker\scripts\ObjectTracker.py
+- AUTO4508-Project\Group4Proj\catkin_ws\src\object_tracker\msg\Objects.msg
+- AUTO4508-Project\Group4Proj\catkin_ws\src\gui\scripts\GUI.py
+- AUTO4508-Project\Group4Proj\catkin_ws\group4.launch
 
+#
+Code editted by us:
+- AUTO4508-Project\Group4Proj\catkin_ws\src\megamind\CMakeLists.txt
+- AUTO4508-Project\Group4Proj\catkin_ws\src\megamind\package.xml
+- AUTO4508-Project\Group4Proj\catkin_ws\src\gps_travel\CMakeLists.txt
+- AUTO4508-Project\Group4Proj\catkin_ws\src\take_photo\CMakeLists.txt
+- AUTO4508-Project\Group4Proj\catkin_ws\src\object_tracker\CMakeLists.txt
+- AUTO4508-Project\Group4Proj\catkin_ws\src\object_tracker\package.xml
+- AUTO4508-Project\Group4Proj\catkin_ws\src\gui\CMakeLists.txt
+
+#
+Submodules imported from other gits:
+- AUTO4508-Project\Group4Proj\catkin_ws\src\rosaria
+- AUTO4508-Project\Group4Proj\catkin_ws\src\joystick_drivers
+- AUTO4508-Project\Group4Proj\catkin_ws\src\luxonis\depthai-ros
+- AUTO4508-Project\Group4Proj\catkin_ws\src\luxonis\depthai-ros-examples
+- AUTO4508-Project\Group4Proj\catkin_ws\AriaCoda
+
+#
 Working out for GPS Stuff:
 https://boulter.com/gps/distance/?from=-31.98052883658287+115.81716552265434&to=-31.98109143766833+115.81716552265429&units=k
 https://www.gps-coordinates.net/
@@ -85,7 +118,6 @@ Working with ROS
 rosnode list
 rostopic list
 ```
-
 #
 
 Things to look at

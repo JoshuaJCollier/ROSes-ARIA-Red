@@ -1,6 +1,0 @@
--31.9808289171, 115.817131454 (home_sweet_home)
--31.9805773506, 115.817166098 (rallying_point)
--31.9803873158, 115.817178278 (somewhere_along_the_way)
--31.9804125234, 115.817564731 (supporter_united)
--31.9801788445, 115.817170286 (maybe_a_scoreboard)
--31.9808184225, 115.817465695 (let_s_have_a_little_stroll)
