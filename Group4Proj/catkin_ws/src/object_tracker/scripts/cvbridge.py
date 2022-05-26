@@ -64,9 +64,9 @@ class image_converter:
             lower_boundb = np.array([0, 190, 150])
             upper_boundb = np.array([4, 255, 255])
 
-            # green object 
-            lower_boundo = np.array([4, 170, 170])     
-            upper_boundo = np.array([12, 255, 255])
+            # blue object 
+            lower_boundo = np.array([100, 0, 0])     
+            upper_boundo = np.array([112, 255, 100])
 
             # find the colors within the boundaries
             maskc = cv2.inRange(hsv, lower_boundc, upper_boundc)
@@ -132,6 +132,7 @@ class image_converter:
                     cv2.putText(cv_image, text= "bucket", org=(xc+20,yc+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
+
                     tracker.bucketX = wc
                     tracker.bucketY = hc
                     tracker.bucketDist = 90/math.sqrt(hc)
@@ -151,6 +152,7 @@ class image_converter:
                     cv2.putText(cv_image, text= "cone", org=(xb+20,yb+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
+
                     tracker.coneX = wb
                     tracker.coneY = hb
                     tracker.coneDist = 30/math.sqrt(hb)
@@ -165,6 +167,7 @@ class image_converter:
                     cv2.putText(cv_image, text= "bucket", org=(xb+20,yb+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
+
                     tracker.bucketX = wb
                     tracker.bucketY = hb
                     tracker.bucketDist = 90/math.sqrt(hb)
