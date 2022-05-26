@@ -150,7 +150,7 @@ class image_converter:
                 peri = cv2.arcLength(c, True)
                 approx = cv2.approxPolyDP(c, 0.1 * peri, True)
                 area = cv2.contourArea(c)
-                if len(approx) == 3 and area > 1000:
+                if len(approx) == 3 and area > 5000:
                     xb, yb, wb, hb = cv2.boundingRect(c); contc = cv2.rectangle(cv_image,(xb,yb),(xb+wb,yb+hb),(0,250,255),2)
                     cv2.putText(cv_image, text= "cone", org=(xb+20,yb+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
@@ -166,7 +166,7 @@ class image_converter:
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
                     thickness=2, lineType=cv2.LINE_AA)
 
-                if len(approx) == 4 and area > 1000:
+                if len(approx) == 4 and area > 5000:
                     xb, yb, wb, hb = cv2.boundingRect(c); contc = cv2.rectangle(cv_image,(xb,yb),(xb+wb,yb+hb),(250,0,255),2)
                     cv2.putText(cv_image, text= "bucket", org=(xb+20,yb+30),
                     fontFace= cv2.FONT_HERSHEY_DUPLEX, fontScale=2, color=(0,0,0),
