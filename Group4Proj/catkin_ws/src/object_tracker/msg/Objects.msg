@@ -5,9 +5,15 @@ float64 coneDist
 float64 bucketDist
 float64 obstacleDist
 float64 coneX
-float64 bucketX
-float64 obstacleX
 float64 coneY
+float64 coneW
+float64 coneH
+float64 bucketX
 float64 bucketY
+float64 bucketW
+float64 bucketH
+float64 obstacleX
 float64 obstacleY
+float64 obstacleW
+float64 obstacleH
 float64 time

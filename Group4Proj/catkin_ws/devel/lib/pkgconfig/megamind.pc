@@ -1,8 +1,0 @@
-prefix=/home/netipc/Desktop/Group4Proj/catkin_ws/devel
-
-Name: megamind
-Description: Description of megamind
-Version: 0.0.0
-Cflags: -I/home/netipc/Desktop/Group4Proj/catkin_ws/devel/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime

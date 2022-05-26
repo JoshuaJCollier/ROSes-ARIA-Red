@@ -11,7 +11,7 @@ from object_tracker.msg import Objects
 from sensor_msgs.msg import NavSatFix, Joy
 
 # Definitions
-RES = 1920
+RES = 1920*2
 MIDDLE = int(RES/2)
 RANGE = int(RES/4)
 
@@ -69,8 +69,7 @@ def gpsTravelSubCallback(data):
 def publisherCallback(event):
     global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_detect, controller_joy_in, mindState, decision, startHeadingTime, foundHeading, firstPos, secondPos
     # Mind State Definitions: 0 -> Goal Seeking, 1 -> Object Avoidance, 2 -> Cone Finding, 3 -> Cone Picture, 4 -> Bucket Picture
-    goals = [(-31.9805773505506, 115.8171660979887), (-31.98038731577529, 115.8171782781675), (-31.98017884452402, 115.8171702857572), (-31.98082891705035, 115.8171314540043), (-31.98081842250873, 115.8174656945906), (-31.98081842250873, 115.8174656945906), (-31.98041252344407, 115.8175647311226), (-31.98052211397503, 115.8197862220968)]
-    # goals = [(-31.9808289171, 115.817131454), (-31.9803873158, 115.817178278), (-31.9804125234, 115.817564731), (-31.9801788445, 115.817170286), (-31.9808289171, 115.817131454)]
+    goals = [(-31.9805773505506,115.8171660979887),(-31.98038731577529,115.8171782781675),(-31.98017884452402,115.8171702857572),(-31.98082891705035,115.8171314540043)]
     relativeGoals = []
     for i in range(len(goals)):
         # relative goals
@@ -138,6 +137,7 @@ def publisherCallback(event):
                         msg.linear.x = 0
                         msg.angular.z = 0
                         mindState = 0
+                        #decision.takePhoto = 1
                 # MOVING OBSTACLE SHOULD BE AVOIDED
                     
             elif (mindState == 2): # ------------- CONE FINDING -------------
@@ -160,7 +160,8 @@ def publisherCallback(event):
                     secondPos = []
                 
                 if object_detect.cone == 0:
-                    mindState = 0
+                    msg.angular.z = 0.3
+                    #mindState = 0
             
             elif (mindState == 3): # ------------- CONE PICTURE -------------
                 # take picture somehow
@@ -174,6 +175,8 @@ def publisherCallback(event):
                     msg.angular.z = 0.2
                 elif (object_detect.bucket and object_detect.bucketX > (MIDDLE+RANGE)):
                     msg.angular.z = -0.2
+                elif (object_detect.bucket == 0):
+                    msg.angular.z = 0.3
                 else:
                     decision.bucketDist = object_detect.bucketDist
                     decision.takePhoto = 1

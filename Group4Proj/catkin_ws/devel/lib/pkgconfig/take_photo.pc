@@ -1,8 +1,0 @@
-prefix=/home/netipc/Desktop/Group4Proj/catkin_ws/devel
-
-Name: take_photo
-Description: Description of take_photo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
