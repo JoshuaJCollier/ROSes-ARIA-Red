@@ -10,20 +10,24 @@ from megamind.msg import Decision
 from object_tracker.msg import Objects
 from sensor_msgs.msg import NavSatFix, Joy
 
+# Definitions
+RES = 1920
+MIDDLE = int(RES/2)
+RANGE = int(RES/4)
+
+# Global Variables
 currentGPSPos = (0, 0)
 start = 0
+mindState = 0
 gps_travel_cmd_vel_msg = Twist()
 object_detect = Objects()
 controller_joy_in = Joy()
-mindState = 0
 decision = Decision()
-#msg = Twist()
 
 firstPos = []
 secondPos = []
 startHeadingTime = 0
 foundHeading = False
-
 megaMindStarted = False
 goalIncreased = False
 
@@ -65,8 +69,8 @@ def gpsTravelSubCallback(data):
 def publisherCallback(event):
     global megaMindStarted, goalIncreased, cmdVelPub, megaPub, currentGPSPos, gps_travel_cmd_vel_msg, object_detect, controller_joy_in, mindState, decision, startHeadingTime, foundHeading, firstPos, secondPos
     # Mind State Definitions: 0 -> Goal Seeking, 1 -> Object Avoidance, 2 -> Cone Finding, 3 -> Cone Picture, 4 -> Bucket Picture
-    #goals = [(-31.9805773505506, 115.8171660979887), (-31.98038731577529, 115.8171782781675), (-31.98017884452402, 115.8171702857572), (-31.98082891705035, 115.8171314540043), (-31.98081842250873, 115.8174656945906), (-31.98081842250873, 115.8174656945906), (-31.98041252344407, 115.8175647311226), (-31.98052211397503, 115.8197862220968)]
-    goals = [(-31.9808289171, 115.817131454), (-31.9803873158, 115.817178278), (-31.9804125234, 115.817564731), (-31.9801788445, 115.817170286), (-31.9808289171, 115.817131454)]
+    goals = [(-31.9805773505506, 115.8171660979887), (-31.98038731577529, 115.8171782781675), (-31.98017884452402, 115.8171702857572), (-31.98082891705035, 115.8171314540043), (-31.98081842250873, 115.8174656945906), (-31.98081842250873, 115.8174656945906), (-31.98041252344407, 115.8175647311226), (-31.98052211397503, 115.8197862220968)]
+    # goals = [(-31.9808289171, 115.817131454), (-31.9803873158, 115.817178278), (-31.9804125234, 115.817564731), (-31.9801788445, 115.817170286), (-31.9808289171, 115.817131454)]
     relativeGoals = []
     for i in range(len(goals)):
         # relative goals
@@ -79,6 +83,7 @@ def publisherCallback(event):
         # 0 -> Goal Seeking
         if (controller_joy_in.buttons[0] == 1):
             if (mindState == 0): # ------------- GOAL SEEKING -------------
+                decision.takePhoto = 0
                 # FIRST CALCULATE THE HEADING
                 goalIncreased = False
                 if (len(firstPos) < 10):
@@ -102,15 +107,18 @@ def publisherCallback(event):
                 # HEADING IS SET, USE GPS TRAVEL TO MOVE
                 if decision.gps_travel_on == 1:
                     msg = gps_travel_cmd_vel_msg
-
                     if math.sqrt(math.pow(goal[1], 2) + math.pow(goal[0],2)) < 0.00002 and msg.linear.x == 0:
                         mindState = 2
-		# if distance to goal is small or we see the cone clearly or there is an obstacle, then 
-                # decision.currentGoal = 1 or 2
+                
+                    if (object_detect.cone and (object_detect.coneDist < 5)):
+                        mindState = 2
+
+                    if (object_detect.obstacle and (object_detect.obstacle < 1.5)):
+                        mindState = 2
 
             elif (mindState == 1): # ------------- OBJECT AVOIDANCE -------------
                 # HARD CODED OBSTACLE AVOIDANCE
-                if object_detect.obstacle == 0 and object_detect.obstacleDist < 1:
+                if object_detect.obstacle and (object_detect.obstacleDist < 1.5):
                     if (object_detect.time + math.pi*0.5 > time.perf_counter()):
                         msg.linear.x = 0
                         msg.angular.z = 0.5
@@ -131,28 +139,44 @@ def publisherCallback(event):
                         msg.angular.z = 0
                         mindState = 0
                 # MOVING OBSTACLE SHOULD BE AVOIDED
-
-                # ONCE OBSTACLE IS GONE RETURN TO GOAL SEEKING
-                if object_avoid_cmd_vel_msg.cone:
-                    mindState = 2
                     
             elif (mindState == 2): # ------------- CONE FINDING -------------
                 # RESETTING SUCH THAT WE CAN GOAL SEEK FOR THE NEXT GOAL AFTER PICTURE AND STUFF
-                if not goalIncreased:
-                    goalIncreased = True
-                    decision.currentGoal += 1
-                    mindState = 3
-                decision.gps_travel_on = 0
-                firstPos = []
-                secondPos = []
+                
+                if (object_detect.cone and object_detect.coneX < (MIDDLE-RANGE)):
+                    msg.angular.z = 0.2
+                elif (object_detect.cone and object_detect.coneX > (MIDDLE+RANGE)):
+                    msg.angular.z = -0.2
+                else:
+                    msg.linear.x = 0.3
+                
+                if object_detect.cone and (object_detect.coneDist < 2):
+                    if not goalIncreased:
+                        goalIncreased = True
+                        decision.currentGoal += 1
+                        mindState = 3
+                    decision.gps_travel_on = 0
+                    firstPos = []
+                    secondPos = []
+                
+                if object_detect.cone == 0:
+                    mindState = 0
             
             elif (mindState == 3): # ------------- CONE PICTURE -------------
                 # take picture somehow
+                decision.takePhoto = 1
                 mindState = 4
             
             elif (mindState == 4): # ------------- BUCKET PICTURE -------------
                 # take picture again but bucket this time
-                if (object_detect.bucket == 1):
+                decision.takePhoto = 0
+                if (object_detect.bucket and object_detect.bucketX < (MIDDLE-RANGE)):
+                    msg.angular.z = 0.2
+                elif (object_detect.bucket and object_detect.bucketX > (MIDDLE+RANGE)):
+                    msg.angular.z = -0.2
+                else:
+                    decision.bucketDist = object_detect.bucketDist
+                    decision.takePhoto = 1
                     mindState = 0
             
             # read from megaPub, might be best to publish mindState and stuff

@@ -1,5 +1,7 @@
-int32 currentGoal
-float32 startHeading
-float32 startTime
-int32 gps_travel_on
-int32 mindState
+int64 currentGoal
+float64 startHeading
+float64 startTime
+int64 gps_travel_on
+int64 mindState
+float64 bucketDist
+int64 takePhoto

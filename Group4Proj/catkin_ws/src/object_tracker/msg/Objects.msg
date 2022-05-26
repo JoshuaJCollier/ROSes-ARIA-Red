@@ -4,7 +4,10 @@ int64 obstacle
 float64 coneDist
 float64 bucketDist
 float64 obstacleDist
-float64 coneSize
-float64 bucketSize
-float64 obstacleSize
+float64 coneX
+float64 bucketX
+float64 obstacleX
+float64 coneY
+float64 bucketY
+float64 obstacleY
 float64 time
